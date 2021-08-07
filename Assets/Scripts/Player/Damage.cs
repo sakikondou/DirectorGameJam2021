@@ -38,11 +38,6 @@ public class Damage : MonoBehaviour
                     Instantiate(m_explosionPrefab, this.transform.position, m_explosionPrefab.transform.rotation);
                     winLabel.SetActive(true);
                 }
-                //if (m_winPrefab)
-                //{
-                //    Instantiate(m_winPrefab, this.transform.position, m_winPrefab.transform.rotation);
-
-                //}
                
                 Destroy(this.gameObject);       // そして自分も破棄する
                     Debug.Log("破壊");
