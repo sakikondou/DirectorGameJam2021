@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
-    [SerializeField] int m_life = 10;
+    [SerializeField] float m_maxHp = 10;
+    public float MaxHp { private set { }get { return m_maxHp; } }
+
+    float m_hp = 0;
+    public float Hp { private set { } get { return m_hp; } }
     [SerializeField] GameObject m_explosionPrefab = null;
 
-
-
-
+    private void Start()
+    {
+        m_hp = m_maxHp;
+    }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,10 +22,10 @@ public class Damage : MonoBehaviour
         {
             Debug.Log("ダメージ");
             Destroy(collision.gameObject);  // 弾のオブジェクトを破棄する
-            m_life--;   // ライフを減らす
+            m_hp--;   // ライフを減らす
 
             // ライフが 0 だったら
-            if (m_life < 1)
+            if (m_hp < 1)
             {
                 // 爆発エフェクトを生成する
                 if (m_explosionPrefab)
@@ -29,7 +34,6 @@ public class Damage : MonoBehaviour
                 }
                 Destroy(this.gameObject);       // そして自分も破棄する
                 Debug.Log("破壊");
-
             }
         }
     }
