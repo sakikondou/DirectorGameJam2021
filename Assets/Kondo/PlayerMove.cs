@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
 
     private void Start()
     {
+        m_inputController.Init();
         m_rb = GetComponent<Rigidbody2D>();
     }
 
