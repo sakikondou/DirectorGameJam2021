@@ -18,7 +18,6 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         m_inputAxis = m_inputController.InputActions.Player.Move.ReadValue<Vector2>();
-
         m_rb.velocity = m_inputAxis * m_speed;
     }
 }
