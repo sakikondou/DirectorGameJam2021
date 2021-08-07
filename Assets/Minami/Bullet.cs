@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
 
     public void Init(Transform muzzle, Transform gun)
     {
+        Debug.Log("d");
         m_rb = GetComponent<Rigidbody2D>();
         m_direction = muzzle.position - gun.position;
         m_rb.velocity = m_direction * m_speed;
