@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class StartPositionForP1 : MonoBehaviour
+public class StartPositionForPlayer: MonoBehaviour
 {
     public GameObject m_Player1Prefab;
     public GameObject m_Player2Prefab;
