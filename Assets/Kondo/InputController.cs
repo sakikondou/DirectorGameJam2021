@@ -10,10 +10,13 @@ public class InputController : MonoBehaviour
     PlayerInputActions m_inputActions;
     public PlayerInputActions InputActions { private set { } get { return m_inputActions; } }
 
-    private void Start()
+    public void Init()
     {
-        m_inputActions = new PlayerInputActions();
-        m_inputActions.Enable();
+        if (m_inputActions == null)
+        {
+            m_inputActions = new PlayerInputActions();
+            m_inputActions.Enable();
+        }
     }
 
     /// <summary>
