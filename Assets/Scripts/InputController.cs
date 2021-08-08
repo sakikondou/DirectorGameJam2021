@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class InputController : MonoBehaviour
 {
-    List<PlayerInputController> m_playerInputControllers;
+    List<PlayerInputController> m_playerInputControllers = new List<PlayerInputController>();
     public List<PlayerInputController> PlayerInputControllers { private set { } get { return m_playerInputControllers; } }
 
     /// <summary>

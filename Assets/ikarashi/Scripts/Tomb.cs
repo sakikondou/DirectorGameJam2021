@@ -19,7 +19,7 @@ public class Tomb : MonoBehaviour
     /// <param name="collider">自身に当たってきた物</param>
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag != "PlayerBullet")
+        if (collider.gameObject.tag != "Bullet")
         {
             return;
         }
