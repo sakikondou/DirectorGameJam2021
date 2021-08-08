@@ -133,6 +133,8 @@ GameObject:
   - component: {fileID: 724077268}
   - component: {fileID: 724077266}
   - component: {fileID: 724077269}
+  - component: {fileID: 724077270}
+  - component: {fileID: 724077271}
   m_Layer: 0
   m_Name: PlayerInputManager
   m_TagString: Untagged
@@ -242,6 +244,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d780735739b51ba4a9d965f007cc0b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &724077270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724077265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c847b9eaff2e49f4db3f94ef8d75f02f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerObjs: []
+--- !u!114 &724077271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724077265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c1d37332890d4347abc58f5b3ba93c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ResultUI: {fileID: 0}
 --- !u!1 &906750179
 GameObject:
   m_ObjectHideFlags: 0

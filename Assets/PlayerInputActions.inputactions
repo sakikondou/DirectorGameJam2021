@@ -30,7 +30,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Rotate",
+                    "name": "RotateMuzzle",
                     "type": "Value",
                     "id": "afcedce9-ce88-4a2c-a0dd-e35662e177d9",
                     "expectedControlType": "Vector2",
@@ -38,9 +38,9 @@
                     "interactions": ""
                 },
                 {
-                    "name": "JoinPlayer",
+                    "name": "Start",
                     "type": "Button",
-                    "id": "60f4e589-2669-4514-8e4f-43ecb2231318",
+                    "id": "cf643a26-409c-49c2-8f5c-536095e8fc80",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -273,30 +273,19 @@
                     "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "",
+                    "groups": "Joystick;Gamepad",
+                    "action": "RotateMuzzle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8198f2e9-ed08-47b3-bfab-35e566833492",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
                     "groups": "Gamepad",
-                    "action": "Rotate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2b7410ce-25b6-4d91-8f27-e0bb8b771659",
-                    "path": "<XInputController>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "JoinPlayer",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "a3202290-5af8-4b6f-9506-7d05a0cb6bfa",
-                    "path": "<Joystick>/stick/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "JoinPlayer",
+                    "action": "Start",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
