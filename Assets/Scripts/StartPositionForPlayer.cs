@@ -26,6 +26,7 @@ public class StartPositionForPlayer: MonoBehaviour
         //Instantiate(PlayerObjs[1], new Vector2(-playerPos_x , -playerPos_y),Quaternion.identity);
         PlayerObjs[0].transform.position = new Vector2(playerPos_x, playerPos_y);
         PlayerObjs[1].transform.position = new Vector2(-playerPos_x, -playerPos_y);
+        PlayerObjs[0].GetComponent<PlayerFire>().ID = 0;
+        PlayerObjs[1].GetComponent<PlayerFire>().ID = 1;
     }
-
 }

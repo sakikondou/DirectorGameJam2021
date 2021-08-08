@@ -15,6 +15,5 @@ public class JoinPlayer : MonoBehaviour
 
     public void Join()
     {
-        m_playerId = m_playerInputManager.playerCount;
     }
 }
