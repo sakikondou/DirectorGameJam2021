@@ -7,6 +7,11 @@ public class HpBar : MonoBehaviour
     [SerializeField] Damage m_damage;
     Slider _slider;
     float _hp = 10;
+
+    //追記
+    public static bool m_gameFinished = false;
+
+
     void Start()
     {
         // スライダーを取得する
@@ -22,6 +27,8 @@ public class HpBar : MonoBehaviour
         {
             // 最大を超えたら0に戻す
             _hp = 0;
+
+            m_gameFinished = true;
         }
 
         // HPゲージに値を設定

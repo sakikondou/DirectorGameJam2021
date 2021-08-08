@@ -27,19 +27,19 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(loadSceneName);
     }
 
-    //Retry
-    public void RestartScene() {
+    //Retry⇒不要
+    //public void RestartScene() {
 
-        loadSceneName = SceneManager.GetActiveScene().name;
-        IsLoaded = true;
+    //    loadSceneName = SceneManager.GetActiveScene().name;
+    //    IsLoaded = true;
 
-        //デバッグ用
-        Debug.Log("現在のシーン：" + loadSceneName);
+    //    //デバッグ用
+    //    Debug.Log("現在のシーン：" + loadSceneName);
     
-    }
+    //}
 
     //リザルト表示(仮)
-    public void Result() {
+    public void Result(GameObject ResultUI) {
 
         ResultUI.SetActive(true);
 
