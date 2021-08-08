@@ -18,4 +18,12 @@ public class Bullet : MonoBehaviour
     {
         m_rb.velocity = m_direction * m_speed;
     }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))  // 衝突相手が 弾 だったら
+        {
+            Debug.Log("BB");
+            Destroy(gameObject);  // 弾のオブジェクトを破棄する
+        }
+    }
 }
