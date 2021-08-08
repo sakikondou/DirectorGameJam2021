@@ -5,14 +5,13 @@ using UnityEngine.UI; // ←※これを忘れずに入れる
 public class HpBar : MonoBehaviour
 {
     [SerializeField] Damage m_damage;
-    Slider _slider;
+    Image _slider;
     float _hp = 10;
-    void Start()
-    {
-        // スライダーを取得する
-        _slider = GameObject.Find("Slider").GetComponent<Slider>();
-    }
 
+    private void Start()
+    {
+        _slider = GetComponent<Image>();
+    }
 
     void Update()
     {
@@ -25,6 +24,6 @@ public class HpBar : MonoBehaviour
         }
 
         // HPゲージに値を設定
-        _slider.value = _hp;
+        _slider.fillAmount = _hp;
     }
 }

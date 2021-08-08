@@ -43,6 +43,7 @@ public class Damage : MonoBehaviour
         {
             if (m_playerFire.ID == collision.gameObject.GetComponent<Bullet>().ID)
             {
+                Debug.Log(m_playerFire.ID);
                 return;
             }
 
