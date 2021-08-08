@@ -11,6 +11,8 @@ public class Tomb : MonoBehaviour
 
     [Tooltip("墓が消えるまでの時間"), SerializeField] float m_timer = 2.0f;
 
+    [SerializeField] GameObject Exprotion = null;
+
     bool m_isBroken;
 
     /// <summary>
@@ -19,7 +21,7 @@ public class Tomb : MonoBehaviour
     /// <param name="collider">自身に当たってきた物</param>
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag != "PlayerBullet")
+        if (collider.gameObject.tag != "Bullet")
         {
             return;
         }
@@ -40,7 +42,13 @@ public class Tomb : MonoBehaviour
                 }
                 m_isBroken = true;
             }
-            Destroy(this.gameObject,m_timer);
+            if (Exprotion)
+            {
+                Instantiate(Exprotion, this.transform.position, Exprotion.transform.rotation);
+
+            }
+            Destroy(this.gameObject);
         }
     }
+
 }

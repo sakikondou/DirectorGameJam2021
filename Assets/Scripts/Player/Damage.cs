@@ -55,7 +55,7 @@ public class Damage : MonoBehaviour
                     }
                 }
                
-                Destroy(this.gameObject);       // そして自分も破棄する
+                //Destroy(this.gameObject);       // そして自分も破棄する
                     Debug.Log("破壊");
 
             }
