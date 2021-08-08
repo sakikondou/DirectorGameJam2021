@@ -6,13 +6,26 @@ using UnityEngine.UI;
 
 public class Damage : MonoBehaviour
 {
+    /// <summary>
+    /// 最大HP
+    /// </summary>
     [SerializeField] float m_maxHp = 10;
-
+    /// <summary>
+    /// 最大HP
+    /// </summary>
     public float MaxHp { private set { }get { return m_maxHp; } }
-
+    /// <summary>
+    /// 現在のHP
+    /// </summary>
     float m_hp = 0;
+    /// <summary>
+    /// 現在のHP
+    /// </summary>
     public float Hp { private set { } get { return m_hp; } }
-    [SerializeField] GameObject m_explosionPrefab = null;
+    /// <summary>
+    /// HPバー
+    /// </summary>
+    [SerializeField] GameObject m_hpBar = null;
     //[SerializeField] GameObject m_winPrefab = null;
     public GameObject winLabel;
 
@@ -33,10 +46,13 @@ public class Damage : MonoBehaviour
             if (m_hp < 1)
             {
                 // 爆発エフェクトを生成する
-                if (m_explosionPrefab)
+                if (m_hpBar)
                 {
-                    Instantiate(m_explosionPrefab, this.transform.position, m_explosionPrefab.transform.rotation);
-                    winLabel.SetActive(true);
+                    Instantiate(m_hpBar, this.transform.position, m_hpBar.transform.rotation);
+                    if(winLabel != null)
+                    {
+                        winLabel.SetActive(true);
+                    }
                 }
                
                 Destroy(this.gameObject);       // そして自分も破棄する
