@@ -58,9 +58,10 @@ public class Damage : MonoBehaviour
                 if (m_hpBar)
                 {
                     Instantiate(m_hpBar, this.transform.position, m_hpBar.transform.rotation);
-                    if (m_winPrefab != null)
+                    if (winLabel != null)
                     {
-                        m_winPrefab.SetActive(true);
+                        winLabel.SetActive(true);
+                        Instantiate(m_winPrefab, transform.position, Quaternion.identity);
                     }
                 }
                 Destroy(this.gameObject);       // そして自分も破棄する
