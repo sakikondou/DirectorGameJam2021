@@ -30,18 +30,13 @@ public class PlayerMove : MonoBehaviour
         m_speed = m_defaultSpeed;
     }
 
-    private void Update()
+    public void PlayerRotate(InputAction.CallbackContext context)
     {
+        m_inputForwardAxis = context.ReadValue<Vector2>();
         if (m_inputForwardAxis != Vector2.zero)
         {
             transform.up = m_inputForwardAxis;
         }
-    }
-
-    public void PlayerRotate(InputAction.CallbackContext context)
-    {
-        Debug.Log("hohooh");
-        m_inputForwardAxis = context.ReadValue<Vector2>();
     }
 
     public void Move(InputAction.CallbackContext context)
