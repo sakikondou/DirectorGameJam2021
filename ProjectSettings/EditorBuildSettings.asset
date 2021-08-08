@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Minami/Minami.unity
+    guid: 34df6e83a68be264ab210c6f435ff944
+  - enabled: 1
+    path: Assets/Minami/Test.unity
+    guid: 885d50f36e091a846bba089d4309ecd1
   m_configObjects: {}
