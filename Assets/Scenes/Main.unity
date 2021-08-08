@@ -395,6 +395,7 @@ MonoBehaviour:
   PlayerObjs: []
   m_result1: {fileID: 860119659}
   m_result2: {fileID: 833698279}
+  m_color: {r: 1, g: 1, b: 1, a: 0}
 --- !u!114 &724077271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -512,7 +513,7 @@ RectTransform:
   m_LocalScale: {x: 0.1, y: 0.01, z: 1}
   m_Children: []
   m_Father: {fileID: 1924701070}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -796,6 +797,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1924701070}
     m_Modifications:
+    - target: {fileID: -6788879007356887300, guid: 0c9c4cb68eee05942ad238f67956a23a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3994769551953180671, guid: 0c9c4cb68eee05942ad238f67956a23a,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1424,8 +1430,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 618337095}
   - {fileID: 860119660}
+  - {fileID: 618337095}
   - {fileID: 833698282}
   m_Father: {fileID: 0}
   m_RootOrder: 2

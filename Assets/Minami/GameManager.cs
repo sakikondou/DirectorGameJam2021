@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     bool IsLoaded = false;
 
     GameObject[] m_playerObjs;
+    [SerializeField] Color m_color;
 
 
     private void Start()
@@ -47,7 +48,9 @@ public class GameManager : MonoBehaviour
 
     void SendPlayer(Scene scene, LoadSceneMode mode)
     {
-        FindObjectOfType<StartPositionForPlayer>().PlayerObjs = m_playerObjs;
+        StartPositionForPlayer startPositionForPlayer = FindObjectOfType<StartPositionForPlayer>();
+        startPositionForPlayer.PlayerObjs = m_playerObjs;
+        startPositionForPlayer.m_color = m_color;
     }
 
     public void SetPlayers(GameObject[] players)

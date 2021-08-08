@@ -7,6 +7,7 @@ public class StartPositionForPlayer: MonoBehaviour
     public GameObject[] PlayerObjs;
     [SerializeField] GameObject m_result1;
     [SerializeField] GameObject m_result2;
+    public Color m_color;
     void Start()
     {
         //スクリーン端座標
@@ -29,9 +30,14 @@ public class StartPositionForPlayer: MonoBehaviour
         PlayerObjs[1].transform.position = new Vector2(-playerPos_x, -playerPos_y);
         PlayerObjs[0].GetComponent<PlayerFire>().ID = 0;
         PlayerObjs[1].GetComponent<PlayerFire>().ID = 1;
+        
         PlayerObjs[0].GetComponent<PlayerInputController>().Init();
         PlayerObjs[1].GetComponent<PlayerInputController>().Init();
         PlayerObjs[0].GetComponent<Damage>().m_winPrefab = m_result1;
         PlayerObjs[1].GetComponent<Damage>().m_winPrefab = m_result2;
+        PlayerObjs[0].GetComponent<Restart>().result = m_result1;
+        PlayerObjs[1].GetComponent<Restart>().result = m_result2;
+        PlayerObjs[1].GetComponent<PlayerFire>().ChangeColor(m_color);
+
     }
 }

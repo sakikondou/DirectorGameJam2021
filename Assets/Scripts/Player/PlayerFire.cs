@@ -35,11 +35,17 @@ public class PlayerFire : MonoBehaviour
     /// 撃っているか
     /// </summary>
     bool m_isFire = false;
+    SpriteRenderer m_spriteRenderer;
 
     private void Start()
     {
         m_fireRate = m_defaultFireRate;
         m_fireInterval = m_fireRate / 60;
+    }
+
+    public void ChangeColor(Color color)
+    {
+        m_spriteRenderer.material.color = color;
     }
 
     private void Update()

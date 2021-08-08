@@ -5,13 +5,8 @@ using UnityEngine.InputSystem;
 
 public class Restart : MonoBehaviour
 {
-    GameObject result;
+    public GameObject result;
     string sceneName = "Title";
-
-    private void Start()
-    {
-        result = GetComponent<Damage>().m_winPrefab;
-    }
 
     public void ReStart(InputAction.CallbackContext context)
     {
