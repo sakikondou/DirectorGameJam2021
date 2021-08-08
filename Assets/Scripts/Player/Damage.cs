@@ -13,7 +13,7 @@ public class Damage : MonoBehaviour
     /// <summary>
     /// 最大HP
     /// </summary>
-    public float MaxHp { private set { }get { return m_maxHp; } }
+    public float MaxHp { private set { } get { return m_maxHp; } }
     /// <summary>
     /// 現在のHP
     /// </summary>
@@ -49,15 +49,13 @@ public class Damage : MonoBehaviour
                 if (m_hpBar)
                 {
                     Instantiate(m_hpBar, this.transform.position, m_hpBar.transform.rotation);
-                    if(winLabel != null)
+                    if (winLabel != null)
                     {
                         winLabel.SetActive(true);
                     }
                 }
-               
                 Destroy(this.gameObject);       // そして自分も破棄する
-                    Debug.Log("破壊");
-
+                Debug.Log("破壊");
             }
         }
     }
