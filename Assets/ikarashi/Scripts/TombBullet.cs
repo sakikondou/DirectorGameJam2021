@@ -36,6 +36,7 @@ public class TombBullet : Bullet
                 m_direction = m_reflectDir;
                 ChangeVelo();
                 break;
+
             case "BottomWall":
                 m_reflectDir = new Vector2(m_direction.x, m_direction.y * -1);
                 m_direction = m_reflectDir;
