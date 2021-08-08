@@ -29,15 +29,23 @@ public class Damage : MonoBehaviour
     //[SerializeField] GameObject m_winPrefab = null;
     public GameObject winLabel;
 
+    PlayerFire m_playerFire;
+
     private void Start()
     {
         m_hp = m_maxHp;
+        m_playerFire = GetComponent<PlayerFire>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))  // 衝突相手が 弾 だったら
         {
+            if (m_playerFire.ID == collision.gameObject.GetComponent<Bullet>().ID)
+            {
+                return;
+            }
+
             Debug.Log("ダメージ");
             Destroy(collision.gameObject);  // 弾のオブジェクトを破棄する
             m_hp--;   // ライフを減らす

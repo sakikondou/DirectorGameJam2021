@@ -43,7 +43,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Rotate"",
+                    ""name"": ""RotateMuzzle"",
                     ""type"": ""Value"",
                     ""id"": ""afcedce9-ce88-4a2c-a0dd-e35662e177d9"",
                     ""expectedControlType"": ""Vector2"",
@@ -51,9 +51,9 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""JoinPlayer"",
+                    ""name"": ""Start"",
                     ""type"": ""Button"",
-                    ""id"": ""60f4e589-2669-4514-8e4f-43ecb2231318"",
+                    ""id"": ""cf643a26-409c-49c2-8f5c-536095e8fc80"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -286,30 +286,19 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
                     ""processors"": """",
+                    ""groups"": ""Joystick;Gamepad"",
+                    ""action"": ""RotateMuzzle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8198f2e9-ed08-47b3-bfab-35e566833492"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""Rotate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""2b7410ce-25b6-4d91-8f27-e0bb8b771659"",
-                    ""path"": ""<XInputController>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""JoinPlayer"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""a3202290-5af8-4b6f-9506-7d05a0cb6bfa"",
-                    ""path"": ""<Joystick>/stick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""JoinPlayer"",
+                    ""action"": ""Start"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -890,8 +879,8 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
-        m_Player_Rotate = m_Player.FindAction("Rotate", throwIfNotFound: true);
-        m_Player_JoinPlayer = m_Player.FindAction("JoinPlayer", throwIfNotFound: true);
+        m_Player_RotateMuzzle = m_Player.FindAction("RotateMuzzle", throwIfNotFound: true);
+        m_Player_Start = m_Player.FindAction("Start", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -956,8 +945,8 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Fire;
-    private readonly InputAction m_Player_Rotate;
-    private readonly InputAction m_Player_JoinPlayer;
+    private readonly InputAction m_Player_RotateMuzzle;
+    private readonly InputAction m_Player_Start;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -965,8 +954,8 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
-        public InputAction @Rotate => m_Wrapper.m_Player_Rotate;
-        public InputAction @JoinPlayer => m_Wrapper.m_Player_JoinPlayer;
+        public InputAction @RotateMuzzle => m_Wrapper.m_Player_RotateMuzzle;
+        public InputAction @Start => m_Wrapper.m_Player_Start;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -985,12 +974,12 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                @Rotate.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotate;
-                @Rotate.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotate;
-                @Rotate.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotate;
-                @JoinPlayer.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJoinPlayer;
-                @JoinPlayer.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJoinPlayer;
-                @JoinPlayer.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJoinPlayer;
+                @RotateMuzzle.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateMuzzle;
+                @RotateMuzzle.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateMuzzle;
+                @RotateMuzzle.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateMuzzle;
+                @Start.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStart;
+                @Start.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStart;
+                @Start.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStart;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1004,12 +993,12 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
-                @Rotate.started += instance.OnRotate;
-                @Rotate.performed += instance.OnRotate;
-                @Rotate.canceled += instance.OnRotate;
-                @JoinPlayer.started += instance.OnJoinPlayer;
-                @JoinPlayer.performed += instance.OnJoinPlayer;
-                @JoinPlayer.canceled += instance.OnJoinPlayer;
+                @RotateMuzzle.started += instance.OnRotateMuzzle;
+                @RotateMuzzle.performed += instance.OnRotateMuzzle;
+                @RotateMuzzle.canceled += instance.OnRotateMuzzle;
+                @Start.started += instance.OnStart;
+                @Start.performed += instance.OnStart;
+                @Start.canceled += instance.OnStart;
             }
         }
     }
@@ -1169,8 +1158,8 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
-        void OnRotate(InputAction.CallbackContext context);
-        void OnJoinPlayer(InputAction.CallbackContext context);
+        void OnRotateMuzzle(InputAction.CallbackContext context);
+        void OnStart(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
