@@ -18,4 +18,11 @@ public class Bullet : MonoBehaviour
     {
         m_rb.velocity = m_direction * m_speed;
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
