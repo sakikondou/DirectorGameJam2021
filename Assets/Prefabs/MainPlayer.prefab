@@ -17,8 +17,10 @@ GameObject:
   - component: {fileID: 9071156759587318852}
   - component: {fileID: 9071156759587318853}
   - component: {fileID: 4427303161506583199}
+  - component: {fileID: 9139398637693727855}
+  - component: {fileID: 5067208536940355500}
   m_Layer: 0
-  m_Name: Player 1
+  m_Name: MainPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,6 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 305d5a4accb6327478525757a0d84e95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ID: 0
   m_bullet: {fileID: 2423608197290569810, guid: 06131f6aec962af4b935a4b2756927d8,
     type: 3}
   m_muzzles:
@@ -213,10 +216,6 @@ MonoBehaviour:
     m_ActionName: Player/RotateMuzzle[/XInputControllerWindows/rightStick,/XInputControllerWindows/rightStick]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 60f4e589-2669-4514-8e4f-43ecb2231318
-    m_ActionName: Player/JoinPlayer[/XInputControllerWindows/buttonSouth,/XInputControllerWindows/buttonSouth]
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: 03929092-328f-4783-a19b-b205115037a7
     m_ActionName: UI/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/dpad,/XInputControllerWindows/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
@@ -255,6 +254,21 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: b88c36a8-1c9a-406a-9d85-ca60ac481ab4
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9139398637693727855}
+        m_MethodName: OnStart
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: cf643a26-409c-49c2-8f5c-536095e8fc80
+    m_ActionName: Player/Start[/XInputControllerWindows/start,/XInputControllerWindows/start]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Joystick
   m_DefaultActionMap: Player
@@ -316,6 +330,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &9139398637693727855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9071156759587318856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e4b7f029139784aa22bcce0b946b1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_sceneName: Main
+--- !u!114 &5067208536940355500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9071156759587318856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 823f4669eecdc574dbc417b2d263c084, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9071156760812851373
 GameObject:
   m_ObjectHideFlags: 0

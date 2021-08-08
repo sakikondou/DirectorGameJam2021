@@ -28,5 +28,7 @@ public class StartPositionForPlayer: MonoBehaviour
         PlayerObjs[1].transform.position = new Vector2(-playerPos_x, -playerPos_y);
         PlayerObjs[0].GetComponent<PlayerFire>().ID = 0;
         PlayerObjs[1].GetComponent<PlayerFire>().ID = 1;
+        PlayerObjs[0].GetComponent<PlayerInputController>().Init();
+        PlayerObjs[1].GetComponent<PlayerInputController>().Init();
     }
 }

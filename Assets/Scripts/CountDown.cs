@@ -7,12 +7,15 @@ public class CountDown : MonoBehaviour
     float m_timer = 0f;
     InputController m_input;
     bool m_stoped;
+    Animator m_animator;
+
     private void Start()
     {
         m_input = GetComponent<InputController>();
         Debug.Log($"m_input != null : {m_input != null}");
         m_input.AllStopInput();
-
+        m_animator = GetComponent<Animator>();
+        m_animator.Play("CountDown");
     }
     void Update()
     {
