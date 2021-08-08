@@ -26,7 +26,7 @@ public class Damage : MonoBehaviour
     /// HPバー
     /// </summary>
     [SerializeField] GameObject m_hpBar = null;
-    //[SerializeField] GameObject m_winPrefab = null;
+    public GameObject m_winPrefab = null;
     public GameObject winLabel;
 
     PlayerFire m_playerFire;
@@ -58,9 +58,9 @@ public class Damage : MonoBehaviour
                 if (m_hpBar)
                 {
                     Instantiate(m_hpBar, this.transform.position, m_hpBar.transform.rotation);
-                    if (winLabel != null)
+                    if (m_winPrefab != null)
                     {
-                        winLabel.SetActive(true);
+                        m_winPrefab.SetActive(true);
                     }
                 }
                 Destroy(this.gameObject);       // そして自分も破棄する

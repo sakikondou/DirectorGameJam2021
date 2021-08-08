@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerFire : MonoBehaviour
 {
-    public int ID = 0;
+    public int ID = -1;
     /// <summary>
     /// 弾のプレファブ
     /// </summary>
@@ -52,6 +52,7 @@ public class PlayerFire : MonoBehaviour
             for (int i = 0; i < m_muzzles.Length; i++)
             {
                 GameObject obj = Instantiate(m_bullet, m_muzzles[i]);
+                obj.SetActive(true);
                 obj.GetComponent<Bullet>().Init(m_muzzles[i], transform);
                 obj.GetComponent<Bullet>().ID = ID;
                 obj.transform.parent = null;

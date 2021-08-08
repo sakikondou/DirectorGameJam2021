@@ -5,7 +5,8 @@ public class StartPositionForPlayer: MonoBehaviour
     //public GameObject m_Player1Prefab;
     //public GameObject m_Player2Prefab;
     public GameObject[] PlayerObjs;
-
+    [SerializeField] GameObject m_result1;
+    [SerializeField] GameObject m_result2;
     void Start()
     {
         //スクリーン端座標
@@ -30,5 +31,7 @@ public class StartPositionForPlayer: MonoBehaviour
         PlayerObjs[1].GetComponent<PlayerFire>().ID = 1;
         PlayerObjs[0].GetComponent<PlayerInputController>().Init();
         PlayerObjs[1].GetComponent<PlayerInputController>().Init();
+        PlayerObjs[0].GetComponent<Damage>().m_winPrefab = m_result1;
+        PlayerObjs[1].GetComponent<Damage>().m_winPrefab = m_result2;
     }
 }
