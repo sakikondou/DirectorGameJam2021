@@ -10,29 +10,21 @@ public class GameManager : MonoBehaviour
     string loadSceneName;
     bool IsLoaded = false;
 
+    GameObject[] m_playerObjs;
 
-    private void Awake()
+
+    private void Start()
     {
         Instance = this;
-    }
-
-    void Update()
-    {
-
-        if (IsLoaded) {
-
-            SceneManager.LoadScene(loadSceneName);
-
-        }
-
+        SceneManager.sceneLoaded += SendPlayer; 
+        DontDestroyOnLoad(gameObject);
     }
 
     //シーン遷移
     public void SceneLoad(string sceneName) {
 
         loadSceneName = sceneName;
-        IsLoaded = true;
-    
+        SceneManager.LoadScene(loadSceneName);
     }
 
     //Retry
@@ -53,5 +45,13 @@ public class GameManager : MonoBehaviour
 
     }
 
+    void SendPlayer(Scene scene, LoadSceneMode mode)
+    {
+        FindObjectOfType<StartPositionForPlayer>().PlayerObjs = m_playerObjs;
+    }
 
+    public void SetPlayers(GameObject[] players)
+    {
+        m_playerObjs = players;
+    }
 }

@@ -2,8 +2,9 @@
 
 public class StartPositionForPlayer: MonoBehaviour
 {
-    public GameObject m_Player1Prefab;
-    public GameObject m_Player2Prefab;
+    //public GameObject m_Player1Prefab;
+    //public GameObject m_Player2Prefab;
+    public GameObject[] PlayerObjs;
 
     void Start()
     {
@@ -17,13 +18,14 @@ public class StartPositionForPlayer: MonoBehaviour
         float player_height = GetComponent<Transform>().localScale.y;
 
         var playerPos_x = Random.Range(screen_left + player_width, -1.5f) ;
-        var playerPos_y = Random.Range(screen_bottom + player_height, screen_top - player_width); 
+        var playerPos_y = Random.Range(screen_bottom + player_height, screen_top - player_width);
 
 
         //１Ｐと２Ｐ生成
-        GameObject Player1 = Instantiate(m_Player1Prefab, new Vector2(playerPos_x , playerPos_y),Quaternion.identity);
-        GameObject Player2 = Instantiate(m_Player2Prefab, new Vector2(-playerPos_x , -playerPos_y),Quaternion.identity);
-
+        //Instantiate(PlayerObjs[0], new Vector2(playerPos_x, playerPos_y), Quaternion.identity);
+        //Instantiate(PlayerObjs[1], new Vector2(-playerPos_x , -playerPos_y),Quaternion.identity);
+        PlayerObjs[0].transform.position = new Vector2(playerPos_x, playerPos_y);
+        PlayerObjs[1].transform.position = new Vector2(-playerPos_x, -playerPos_y);
     }
 
 }
