@@ -13,7 +13,7 @@ public class Damage : MonoBehaviour
     /// <summary>
     /// 最大HP
     /// </summary>
-    public float MaxHp { private set { }get { return m_maxHp; } }
+    public float MaxHp { private set { } get { return m_maxHp; } }
     /// <summary>
     /// 現在のHP
     /// </summary>
@@ -29,15 +29,23 @@ public class Damage : MonoBehaviour
     //[SerializeField] GameObject m_winPrefab = null;
     public GameObject winLabel;
 
+    PlayerFire m_playerFire;
+
     private void Start()
     {
         m_hp = m_maxHp;
+        m_playerFire = GetComponent<PlayerFire>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))  // 衝突相手が 弾 だったら
         {
+            if (m_playerFire.ID == collision.gameObject.GetComponent<Bullet>().ID)
+            {
+                return;
+            }
+
             Debug.Log("ダメージ");
             Destroy(collision.gameObject);  // 弾のオブジェクトを破棄する
             m_hp--;   // ライフを減らす
@@ -49,15 +57,13 @@ public class Damage : MonoBehaviour
                 if (m_hpBar)
                 {
                     Instantiate(m_hpBar, this.transform.position, m_hpBar.transform.rotation);
-                    if(winLabel != null)
+                    if (winLabel != null)
                     {
                         winLabel.SetActive(true);
                     }
                 }
-               
-                //Destroy(this.gameObject);       // そして自分も破棄する
-                    Debug.Log("破壊");
-
+                Destroy(this.gameObject);       // そして自分も破棄する
+                Debug.Log("破壊");
             }
         }
     }
