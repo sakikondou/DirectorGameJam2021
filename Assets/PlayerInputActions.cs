@@ -57,6 +57,14 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ReStart"",
+                    ""type"": ""Button"",
+                    ""id"": ""ae4c2b9d-a356-45e5-8b2b-c0d68f840700"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -299,6 +307,17 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""94b9d06b-f735-496d-b118-3ea6b112c27d"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ReStart"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -881,6 +900,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_RotateMuzzle = m_Player.FindAction("RotateMuzzle", throwIfNotFound: true);
         m_Player_Start = m_Player.FindAction("Start", throwIfNotFound: true);
+        m_Player_ReStart = m_Player.FindAction("ReStart", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -947,6 +967,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Fire;
     private readonly InputAction m_Player_RotateMuzzle;
     private readonly InputAction m_Player_Start;
+    private readonly InputAction m_Player_ReStart;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -956,6 +977,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
         public InputAction @RotateMuzzle => m_Wrapper.m_Player_RotateMuzzle;
         public InputAction @Start => m_Wrapper.m_Player_Start;
+        public InputAction @ReStart => m_Wrapper.m_Player_ReStart;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -980,6 +1002,9 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @Start.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStart;
                 @Start.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStart;
                 @Start.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStart;
+                @ReStart.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReStart;
+                @ReStart.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReStart;
+                @ReStart.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReStart;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -999,6 +1024,9 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @Start.started += instance.OnStart;
                 @Start.performed += instance.OnStart;
                 @Start.canceled += instance.OnStart;
+                @ReStart.started += instance.OnReStart;
+                @ReStart.performed += instance.OnReStart;
+                @ReStart.canceled += instance.OnReStart;
             }
         }
     }
@@ -1160,6 +1188,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         void OnFire(InputAction.CallbackContext context);
         void OnRotateMuzzle(InputAction.CallbackContext context);
         void OnStart(InputAction.CallbackContext context);
+        void OnReStart(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

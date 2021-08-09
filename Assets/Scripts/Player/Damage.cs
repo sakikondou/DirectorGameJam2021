@@ -26,7 +26,7 @@ public class Damage : MonoBehaviour
     /// HPバー
     /// </summary>
     [SerializeField] GameObject m_hpBar = null;
-    //[SerializeField] GameObject m_winPrefab = null;
+    public GameObject m_winPrefab = null;
     public GameObject winLabel;
 
     PlayerFire m_playerFire;
@@ -43,6 +43,7 @@ public class Damage : MonoBehaviour
         {
             if (m_playerFire.ID == collision.gameObject.GetComponent<Bullet>().ID)
             {
+                Debug.Log(m_playerFire.ID);
                 return;
             }
 
@@ -60,6 +61,7 @@ public class Damage : MonoBehaviour
                     if (winLabel != null)
                     {
                         winLabel.SetActive(true);
+                        Instantiate(m_winPrefab, transform.position, Quaternion.identity);
                     }
                 }
                 Destroy(this.gameObject);       // そして自分も破棄する

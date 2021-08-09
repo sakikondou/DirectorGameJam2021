@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     [Tooltip("弾の速度"), SerializeField] float m_speed = 5.0f;
     private Rigidbody2D m_rb;
     public Vector2 m_direction;
-    public int ID = 0;
+    public int ID = -1;
 
     public void Init(Transform muzzle, Transform gun)
     {

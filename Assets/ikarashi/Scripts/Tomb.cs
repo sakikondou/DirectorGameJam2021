@@ -33,10 +33,12 @@ public class Tomb : MonoBehaviour
                 for (int i = 0; i < m_muzzles.Length; i++)
                 {
                     GameObject go = Instantiate(m_bullet, m_muzzles[i].transform);
+                    go.SetActive(true);
                     Bullet bullet = go.GetComponent<Bullet>();
                     if (bullet)
                     {
                         bullet.Init(m_muzzles[i].transform, transform);
+                        bullet.ID = 10;
                     }
                     go.transform.parent = null;
                 }
