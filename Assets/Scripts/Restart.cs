@@ -13,6 +13,7 @@ public class Restart : MonoBehaviour
         if (result.activeSelf)
         {
             GameManager.Instance.SceneLoad(sceneName);
+            result.SetActive(false);
         }
     }
 }
