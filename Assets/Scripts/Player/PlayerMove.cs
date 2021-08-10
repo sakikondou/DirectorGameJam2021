@@ -59,19 +59,7 @@ public class PlayerMove : Player
 
     public void Move(InputAction.CallbackContext context)
     {
-        if(GameManager.Instance.IsKeyboardOperation &&
-            PlayerID == 0 ||
-            !GameManager.Instance.IsKeyboardOperation)
-        {
-            m_inputMoveAxis = context.ReadValue<Vector2>();
-            m_rb.velocity = m_inputMoveAxis * m_speed;
-        }
-    }
-
-    public void Move2(InputAction.CallbackContext context)
-    {
-        if (GameManager.Instance.IsKeyboardOperation &&
-            PlayerID == 1)
+        if (!GameManager.Instance.IsKeyboardOperation)
         {
             m_inputMoveAxis = context.ReadValue<Vector2>();
             m_rb.velocity = m_inputMoveAxis * m_speed;
@@ -94,4 +82,30 @@ public class PlayerMove : Player
     {
         m_speed = m_defaultSpeed;
     }
+
+
+    #region キーボード操作
+
+    public void Move1(InputAction.CallbackContext context)
+    {
+        if (GameManager.Instance.IsKeyboardOperation && PlayerID == 0)
+        {
+            m_inputMoveAxis = context.ReadValue<Vector2>();
+            m_rb.velocity = m_inputMoveAxis * m_speed;
+        }
+    }
+
+    public void Move2(InputAction.CallbackContext context)
+    {
+        if (GameManager.Instance.IsKeyboardOperation &&
+            PlayerID == 1)
+        {
+            m_inputMoveAxis = context.ReadValue<Vector2>();
+            Debug.Log(m_inputMoveAxis);
+            m_rb.velocity = m_inputMoveAxis * m_speed;
+
+        }
+    }
+
+    #endregion 
 }

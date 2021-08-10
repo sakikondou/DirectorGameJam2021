@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
             GetComponent<PlayerInputManager>().enabled = false;
             m_playerGeneratorButton.SetActive(true);
         }
+        DontDestroyOnLoad(gameObject);
     }
 
     public void OnClickPlayer()

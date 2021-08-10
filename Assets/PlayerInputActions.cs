@@ -28,9 +28,9 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Move2"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""9c2a3fc1-6866-4886-9c32-28d76f016266"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
