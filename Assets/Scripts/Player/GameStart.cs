@@ -19,6 +19,7 @@ public class GameStart : MonoBehaviour
 
     public void OnStart(InputAction.CallbackContext context)
     {
+        if (!context.started) return;
         Debug.Log("OnStart");
 
         //プレイヤーの数が揃ってて、
@@ -31,10 +32,7 @@ public class GameStart : MonoBehaviour
 
         SetPlayerID(playerObjs);
 
-        if (context.started)
-        {
-            SceneController.Instance.SceneLoad(m_sceneName);
-        }
+        SceneController.Instance.SceneLoad(m_sceneName);
     }
 
     /// <summary>
@@ -57,6 +55,12 @@ public class GameStart : MonoBehaviour
                     continue;
                 players[i].PlayerID = id;
             }
+        }
+
+
+        for (int i = 0; i < playerObjs.Length; i++)
+        {
+            playerObjs[i].name = playerObjs[i].name + players[i].PlayerID;
         }
     }
 

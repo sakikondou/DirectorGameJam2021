@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     /// <summary>
     /// プレイヤーID
     /// </summary>
-    [SerializeField] int m_playerID = -1;
+    int m_playerID = -1;
     /// <summary>
     /// プレイヤーID
     /// </summary>
@@ -20,6 +20,11 @@ public class Player : MonoBehaviour
             if (caller.GetMethod().ReflectedType.Name == typeof(GameStart).Name)
             {
                 m_playerID = value;
+            }
+            else
+            {
+                Debug.LogError("GameStart以外からアクセスしようとしています。");
+                Debug.LogError("アクセス元：" + caller.GetMethod().ReflectedType.Name);
             }
         }
         get { return m_playerID; }
