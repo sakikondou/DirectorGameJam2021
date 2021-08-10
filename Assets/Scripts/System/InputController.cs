@@ -7,15 +7,16 @@ using UnityEngine;
 /// </summary>
 public class InputController : MonoBehaviour
 {
-    List<PlayerInputController> m_playerInputControllers = new List<PlayerInputController>();
-    public List<PlayerInputController> PlayerInputControllers { private set { } get { return m_playerInputControllers; } }
+    PlayerInputController[] m_playerInputControllers = null;
+    public PlayerInputController[] PlayerInputControllers { private set { } get { return m_playerInputControllers; } }
 
     /// <summary>
     /// 全ての入力を止める
     /// </summary>
     public void AllStopInput()
     {
-        for (int i = 0; i < m_playerInputControllers.Count; i++)
+        m_playerInputControllers = FindObjectsOfType<PlayerInputController>();
+        for (int i = 0; i < m_playerInputControllers.Length; i++)
         {
             m_playerInputControllers[i].StopInput();
         }
@@ -26,7 +27,8 @@ public class InputController : MonoBehaviour
     /// </summary>
     public void AllStartInput()
     {
-        for (int i = 0; i < m_playerInputControllers.Count; i++)
+        m_playerInputControllers = FindObjectsOfType<PlayerInputController>();
+        for (int i = 0; i < m_playerInputControllers.Length; i++)
         {
             m_playerInputControllers[i].StartInput();
         }
@@ -37,7 +39,8 @@ public class InputController : MonoBehaviour
     /// </summary>
     public void AllPlayerInputPlayerChange()
     {
-        for (int i = 0; i < m_playerInputControllers.Count; i++)
+        m_playerInputControllers = FindObjectsOfType<PlayerInputController>();
+        for (int i = 0; i < m_playerInputControllers.Length; i++)
         {
             m_playerInputControllers[i].ChengePlayerInput();
         }
@@ -48,7 +51,8 @@ public class InputController : MonoBehaviour
     /// </summary>
     public void AllPlayerInputUIChange()
     {
-        for (int i = 0; i < m_playerInputControllers.Count; i++)
+        m_playerInputControllers = FindObjectsOfType<PlayerInputController>();
+        for (int i = 0; i < m_playerInputControllers.Length; i++)
         {
             m_playerInputControllers[i].ChengeUIInput();
         }
@@ -59,7 +63,8 @@ public class InputController : MonoBehaviour
     /// </summary>
     public void AllPlayerOffFire()
     {
-        for (int i = 0; i < m_playerInputControllers.Count; i++)
+        m_playerInputControllers = FindObjectsOfType<PlayerInputController>();
+        for (int i = 0; i < m_playerInputControllers.Length; i++)
         {
             m_playerInputControllers[i].OffFire();
         }
@@ -70,7 +75,8 @@ public class InputController : MonoBehaviour
     /// </summary>
     public void AllPlayerOnFire()
     {
-        for (int i = 0; i < m_playerInputControllers.Count; i++)
+        m_playerInputControllers = FindObjectsOfType<PlayerInputController>();
+        for (int i = 0; i < m_playerInputControllers.Length; i++)
         {
             m_playerInputControllers[i].OnFire();
         }

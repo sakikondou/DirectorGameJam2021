@@ -5,17 +5,19 @@ using UnityEngine;
 public class CountDown : MonoBehaviour
 {
     InputController m_input;
-    [SerializeField] TombGenerator m_generator;
+    BomGenerator m_generator;
     private void Start()
     {
         m_input = GetComponent<InputController>();
-        Debug.Log($"m_input != null : {m_input != null}");
+        m_generator = FindObjectOfType<BomGenerator>();
         m_input.AllStopInput();
-
     }
 
-
-    void StartGame()
+    /// <summary>
+    /// ゲームプレイを開始する。
+    /// カウントダウンのAnimationにこの関数を張り付ける。
+    /// </summary>
+    void PlayStart()
     {
         m_input.AllStartInput();
         m_generator.enabled = true;

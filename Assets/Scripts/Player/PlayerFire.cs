@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerFire : MonoBehaviour
+public class PlayerFire : Player
 {
-    public int ID = -1;
+    #region 変数
     /// <summary>
     /// 弾のプレファブ
     /// </summary>
@@ -26,7 +24,10 @@ public class PlayerFire : MonoBehaviour
     /// 射撃間隔
     /// </summary>
     float m_fireInterval = 0;
-    float m_timer = 0;
+    /// <summary>
+    /// 射撃間隔を計るタイマー
+    /// </summary>
+    float m_fireIntervalTimer = 0;
     /// <summary>
     /// 入力角度
     /// </summary>
@@ -35,33 +36,28 @@ public class PlayerFire : MonoBehaviour
     /// 撃っているか
     /// </summary>
     bool m_isFire = false;
-    SpriteRenderer m_spriteRenderer;
+    #endregion
 
     private void Start()
     {
         m_fireRate = m_defaultFireRate;
-        m_fireInterval = m_fireRate / 60;
-    }
-
-    public void ChangeColor(Color color)
-    {
-        m_spriteRenderer.material.color = color;
+        m_fireInterval = 60 / m_fireRate;
     }
 
     private void Update()
     {
-        m_timer += Time.deltaTime;
+        m_fireIntervalTimer += Time.deltaTime;
 
-        if (m_isFire && m_timer >= m_fireInterval)
+        if (m_isFire &&
+            m_fireIntervalTimer >= m_fireInterval)
         {
-            m_timer = 0;
+            m_fireIntervalTimer = 0;
+            //マズルの数だけ弾を生成する
             for (int i = 0; i < m_muzzles.Length; i++)
             {
                 GameObject obj = Instantiate(m_bullet, m_muzzles[i]);
                 obj.SetActive(true);
-                obj.GetComponent<Bullet>().Init(m_muzzles[i], transform);
-                obj.GetComponent<Bullet>().ID = ID;
-                obj.transform.parent = null;
+                obj.GetComponent<PlayerBullet>().Init(m_muzzles[i], transform, PlayerID);
             }
         }
     }
@@ -81,6 +77,6 @@ public class PlayerFire : MonoBehaviour
     public void FireRateUp(float addFireRate)
     {
         m_fireRate = m_defaultFireRate + addFireRate;
-        m_fireInterval = m_fireRate / 60;
+        m_fireInterval = 60 / m_fireRate;
     }
 }

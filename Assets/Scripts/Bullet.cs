@@ -4,27 +4,38 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [Tooltip("弾の速度"), SerializeField] float m_speed = 5.0f;
-    private Rigidbody2D m_rb;
-    public Vector2 m_direction;
-    public int ID = -1;
+    /// <summary>
+    /// 弾速
+    /// </summary>
+    [Tooltip("弾速"), SerializeField] protected float m_speed = 5.0f;
+    /// <summary>
+    /// 弾の方向
+    /// </summary>
+    protected Vector2 m_direction;
 
-    public void Init(Transform muzzle, Transform gun)
+    protected Rigidbody2D m_rb;
+
+    /// <summary>
+    /// 初期化
+    /// </summary>
+    /// <param name="muzzle">マズルのトランスフォーム</param>
+    /// <param name="selfObj">自身のオブジェクト</param>
+    /// <param name="id"></param>
+    public void Init(Transform muzzle, Transform selfObj)
     {
         m_rb = GetComponent<Rigidbody2D>();
-        m_direction = muzzle.position - gun.position;
+        m_direction = muzzle.position - selfObj.position;
         m_rb.velocity = m_direction * m_speed;
+
+        transform.parent = null;
     }
-    public void ChangeVelo()
+
+    /// <summary>
+    /// 移動方向を変える
+    /// </summary>
+    /// <param name="direction">移動方向</param>
+    public void ChangeDirection(Vector2 direction)
     {
-        m_rb.velocity = m_direction * m_speed;
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Wall"))  // 衝突相手が 弾 だったら
-        {
-            Debug.Log("BB");
-            Destroy(gameObject);  // 弾のオブジェクトを破棄する
-        }
+        m_rb.velocity = direction * m_speed;
     }
 }
