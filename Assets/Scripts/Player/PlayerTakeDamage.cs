@@ -23,11 +23,11 @@ public class PlayerTakeDamage : MonoBehaviour
     /// </summary>
     [SerializeField] GameObject m_losingEffect = null;
 
-    PlayerFire m_playerFire = null;
+    Player player = null;
 
     private void Start()
     {
-        m_playerFire = GetComponent<PlayerFire>();
+        player = GetComponent<Player>();
         m_hp = m_maxHp;
     }
 
@@ -39,7 +39,7 @@ public class PlayerTakeDamage : MonoBehaviour
             PlayerBullet playerBullet = collision.gameObject.GetComponent<PlayerBullet>();
             if (playerBullet)
             {
-                if (m_playerFire.PlayerID == playerBullet.ShooterID)
+                if (player.PlayerID == playerBullet.ShooterID)
                     return;
             }
 

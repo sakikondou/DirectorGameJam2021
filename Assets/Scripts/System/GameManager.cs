@@ -31,10 +31,15 @@ public class GameManager : MonoBehaviour
             GetComponent<PlayerInputManager>().enabled = false;
             m_playerGeneratorButton.SetActive(true);
         }
+        DontDestroyOnLoad(gameObject);
     }
 
     public void OnClickPlayer()
     {
-        Instantiate(m_playerPrefab);
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        if (players.Length < 2)
+        {
+            Instantiate(m_playerPrefab);
+        }
     }
 }

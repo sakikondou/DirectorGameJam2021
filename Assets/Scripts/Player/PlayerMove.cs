@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMove : Player
+public class PlayerMove : MonoBehaviour
 {
     /// <summary>
     /// デフォルトのスピード
@@ -21,6 +21,7 @@ public class PlayerMove : Player
     /// 入力されたプレイヤーの向き
     /// </summary>
     Vector2 m_inputForwardAxis = Vector2.zero;
+    Player m_player = null;
 
     Rigidbody2D m_rb = null;
 
@@ -28,26 +29,12 @@ public class PlayerMove : Player
     {
         m_rb = GetComponent<Rigidbody2D>();
         m_speed = m_defaultSpeed;
+        m_player = GetComponent<Player>();
     }
 
     public void PlayerRotate(InputAction.CallbackContext context)
     {
-        if (GameManager.Instance.IsKeyboardOperation &&
-            PlayerID == 0 ||
-            !GameManager.Instance.IsKeyboardOperation)
-        {
-            m_inputForwardAxis = context.ReadValue<Vector2>();
-            if (m_inputForwardAxis != Vector2.zero)
-            {
-                transform.up = m_inputForwardAxis;
-            }
-        }
-    }
-
-    public void PlayerRotate2(InputAction.CallbackContext context)
-    {
-        if (GameManager.Instance.IsKeyboardOperation &&
-            PlayerID == 1)
+        if (!GameManager.Instance.IsKeyboardOperation)
         {
             m_inputForwardAxis = context.ReadValue<Vector2>();
             if (m_inputForwardAxis != Vector2.zero)
@@ -59,19 +46,7 @@ public class PlayerMove : Player
 
     public void Move(InputAction.CallbackContext context)
     {
-        if(GameManager.Instance.IsKeyboardOperation &&
-            PlayerID == 0 ||
-            !GameManager.Instance.IsKeyboardOperation)
-        {
-            m_inputMoveAxis = context.ReadValue<Vector2>();
-            m_rb.velocity = m_inputMoveAxis * m_speed;
-        }
-    }
-
-    public void Move2(InputAction.CallbackContext context)
-    {
-        if (GameManager.Instance.IsKeyboardOperation &&
-            PlayerID == 1)
+        if (!GameManager.Instance.IsKeyboardOperation)
         {
             m_inputMoveAxis = context.ReadValue<Vector2>();
             m_rb.velocity = m_inputMoveAxis * m_speed;
@@ -94,4 +69,49 @@ public class PlayerMove : Player
     {
         m_speed = m_defaultSpeed;
     }
+
+
+    #region キーボード操作
+
+    public void Move1(InputAction.CallbackContext context)
+    {
+        if (GameManager.Instance.IsKeyboardOperation && m_player.PlayerID == 0)
+        {
+            m_inputMoveAxis = context.ReadValue<Vector2>();
+            m_rb.velocity = m_inputMoveAxis * m_speed;
+        }
+    }
+
+    public void Move2(InputAction.CallbackContext context)
+    {
+        if (GameManager.Instance.IsKeyboardOperation && m_player.PlayerID == 1)
+        {
+            m_inputMoveAxis = context.ReadValue<Vector2>();
+            m_rb.velocity = m_inputMoveAxis * m_speed;
+        }
+    }
+
+    private void Update()
+    {
+        if (GameManager.Instance.IsKeyboardOperation)
+            transform.Rotate(0, 0, -m_inputForwardAxis.x);
+    }
+
+    public void PlayerRotate1(InputAction.CallbackContext context)
+    {
+        if (GameManager.Instance.IsKeyboardOperation && m_player.PlayerID == 0)
+        {
+            m_inputForwardAxis = context.ReadValue<Vector2>();
+        }
+    }
+
+    public void PlayerRotate2(InputAction.CallbackContext context)
+    {
+        if (GameManager.Instance.IsKeyboardOperation && m_player.PlayerID == 1)
+        {
+            m_inputForwardAxis = context.ReadValue<Vector2>();
+        }
+    }
+
+    #endregion 
 }

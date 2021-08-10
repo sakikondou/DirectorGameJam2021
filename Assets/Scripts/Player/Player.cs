@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     /// <summary>
     /// プレイヤーID
     /// </summary>
-    int m_playerID = -1;
+    protected int m_playerID = -1;
     /// <summary>
     /// プレイヤーID
     /// </summary>
