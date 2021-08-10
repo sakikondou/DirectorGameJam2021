@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 5259268465556035467}
   - component: {fileID: 702544225287454631}
   - component: {fileID: 7258513720938817266}
-  - component: {fileID: -1677080173488424456}
   - component: {fileID: 82324327877585803}
   - component: {fileID: 4965323208830655656}
+  - component: {fileID: 8496916198183223314}
   m_Layer: 12
-  m_Name: TombBullet
+  m_Name: BomBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,22 +123,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &-1677080173488424456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8861650539558515909}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e77519784cc0a443a5486f7c7c98b2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_speed: 40
-  m_direction: {x: 0, y: 0}
-  ID: 0
-  m_destroyTime: 8
 --- !u!82 &82324327877585803
 AudioSource:
   m_ObjectHideFlags: 0
@@ -350,3 +334,17 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &8496916198183223314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8861650539558515909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e77519784cc0a443a5486f7c7c98b2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_speed: 19.91
+  m_destroyTime: 2

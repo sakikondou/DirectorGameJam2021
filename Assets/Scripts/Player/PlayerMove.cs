@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMove : MonoBehaviour
+public class PlayerMove : Player
 {
     /// <summary>
     /// デフォルトのスピード
     /// </summary>
-    [SerializeField] float m_defaultSpeed = 5;
+    float m_defaultSpeed = 5;
     /// <summary>
     /// 現在のスピード
     /// </summary>
@@ -32,23 +32,56 @@ public class PlayerMove : MonoBehaviour
 
     public void PlayerRotate(InputAction.CallbackContext context)
     {
-        m_inputForwardAxis = context.ReadValue<Vector2>();
-        if (m_inputForwardAxis != Vector2.zero)
+        if (GameManager.Instance.IsKeyboardOperation &&
+            PlayerID == 0 ||
+            !GameManager.Instance.IsKeyboardOperation)
         {
-            transform.up = m_inputForwardAxis;
+            m_inputForwardAxis = context.ReadValue<Vector2>();
+            if (m_inputForwardAxis != Vector2.zero)
+            {
+                transform.up = m_inputForwardAxis;
+            }
+        }
+    }
+
+    public void PlayerRotate2(InputAction.CallbackContext context)
+    {
+        if (GameManager.Instance.IsKeyboardOperation &&
+            PlayerID == 1)
+        {
+            m_inputForwardAxis = context.ReadValue<Vector2>();
+            if (m_inputForwardAxis != Vector2.zero)
+            {
+                transform.up = m_inputForwardAxis;
+            }
         }
     }
 
     public void Move(InputAction.CallbackContext context)
     {
-        m_inputMoveAxis = context.ReadValue<Vector2>();
-        m_rb.velocity = m_inputMoveAxis * m_speed;
+        if(GameManager.Instance.IsKeyboardOperation &&
+            PlayerID == 0 ||
+            !GameManager.Instance.IsKeyboardOperation)
+        {
+            m_inputMoveAxis = context.ReadValue<Vector2>();
+            m_rb.velocity = m_inputMoveAxis * m_speed;
+        }
+    }
+
+    public void Move2(InputAction.CallbackContext context)
+    {
+        if (GameManager.Instance.IsKeyboardOperation &&
+            PlayerID == 1)
+        {
+            m_inputMoveAxis = context.ReadValue<Vector2>();
+            m_rb.velocity = m_inputMoveAxis * m_speed;
+        }
     }
 
     /// <summary>
     /// スピードを上げる
     /// </summary>
-    /// <param name="addSpeed"></param>
+    /// <param name="addSpeed">加算するスピード</param>
     public void SpeedUp(float addSpeed)
     {
         m_speed = m_defaultSpeed + addSpeed;

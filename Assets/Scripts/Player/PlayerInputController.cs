@@ -10,10 +10,9 @@ public class PlayerInputController : MonoBehaviour
 {
     PlayerInput m_playerInput;
 
-    public void Init()
+    void Start()
     {
         m_playerInput = GetComponent<PlayerInput>();
-        FindObjectOfType<InputController>().PlayerInputControllers.Add(this);
     }
 
     /// <summary>

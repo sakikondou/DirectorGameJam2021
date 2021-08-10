@@ -1,60 +1,25 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
-    [SerializeField] GameObject ResultUI;
-
-    string loadSceneName;
-    bool IsLoaded = false;
-
-    GameObject[] m_playerObjs;
-    [SerializeField] Color m_color;
-
-
+    [SerializeField] bool m_isKeyboardOperation;
+    [SerializeField] GameObject m_playerPrefab;
+    [SerializeField] GameObject m_playerGeneratorButton;
+    public bool IsKeyboardOperation { private set { } get { return m_isKeyboardOperation; } }
     private void Start()
     {
         Instance = this;
-        SceneManager.sceneLoaded += SendPlayer; 
-        DontDestroyOnLoad(gameObject);
+        GetComponent<PlayerInputManager>().enabled = false;
+        if (m_isKeyboardOperation)
+            m_playerGeneratorButton.SetActive(true);
     }
 
-    //シーン遷移
-    public void SceneLoad(string sceneName) {
-
-        loadSceneName = sceneName;
-        SceneManager.LoadScene(loadSceneName);
-    }
-
-    //Retry
-    public void RestartScene() {
-
-        loadSceneName = SceneManager.GetActiveScene().name;
-        IsLoaded = true;
-
-        //デバッグ用
-        Debug.Log("現在のシーン：" + loadSceneName);
-    
-    }
-
-    //リザルト表示(仮)
-    public void Result() {
-
-        ResultUI.SetActive(true);
-
-    }
-
-    void SendPlayer(Scene scene, LoadSceneMode mode)
+    public void OnClickPlayer()
     {
-        StartPositionForPlayer startPositionForPlayer = FindObjectOfType<StartPositionForPlayer>();
-        startPositionForPlayer.PlayerObjs = m_playerObjs;
-        startPositionForPlayer.m_color = m_color;
-    }
-
-    public void SetPlayers(GameObject[] players)
-    {
-        m_playerObjs = players;
+        Instantiate(m_playerPrefab);
     }
 }

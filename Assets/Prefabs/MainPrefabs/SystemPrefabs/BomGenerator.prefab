@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8350995367557743316
+--- !u!1 &4668047186133530938
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8350995367557743314}
-  - component: {fileID: 8350995367557743317}
+  - component: {fileID: 4668047186133530940}
+  - component: {fileID: 4668047186133530939}
   m_Layer: 0
   m_Name: BomGenerator
   m_TagString: Untagged
@@ -17,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8350995367557743314
+--- !u!4 &4668047186133530940
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8350995367557743316}
+  m_GameObject: {fileID: 4668047186133530938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.5, y: -4.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,23 +31,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8350995367557743317
+--- !u!114 &4668047186133530939
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8350995367557743316}
-  m_Enabled: 0
+  m_GameObject: {fileID: 4668047186133530938}
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d29be1830170d91469b9f40358e320cd, type: 3}
+  m_Script: {fileID: 11500000, guid: c728d822088088e4897a2095144bc3e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_spawn: {fileID: 2579635453950913136, guid: c42db2e3ef851b94f99f711f952d0730, type: 3}
-  m_tomb: {fileID: 2558961536413418066, guid: 11758d61cc05eaa4bb7c66129b48e52b, type: 3}
+  m_bom: {fileID: 2558961536413418066, guid: 11758d61cc05eaa4bb7c66129b48e52b, type: 3}
   m_indexNumX: 16
   m_indexNumY: 10
-  m_maxSpawnCount: 2
+  m_maxSpawnCount: 10
   m_minSpawnCount: 1
   m_interval: 5
   m_decreaseIntervalValue: 0.2

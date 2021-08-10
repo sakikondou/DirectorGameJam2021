@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Restart : MonoBehaviour
+public class PlayerRestart : MonoBehaviour
 {
     public GameObject result;
     string sceneName = "Title";
@@ -12,7 +12,7 @@ public class Restart : MonoBehaviour
     {
         if (result.activeSelf)
         {
-            GameManager.Instance.SceneLoad(sceneName);
+            SceneController.Instance.SceneLoad(sceneName);
             result.SetActive(false);
         }
     }

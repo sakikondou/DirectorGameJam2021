@@ -4,7 +4,7 @@ using UnityEngine.UI; // ←※これを忘れずに入れる
 
 public class HpBar : MonoBehaviour
 {
-    [SerializeField] Damage m_damage;
+    [SerializeField] PlayerTakeDamage m_damage;
     Image _slider;
     float _hp = 10;
 
