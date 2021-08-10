@@ -860,7 +860,7 @@ PrefabInstance:
     - target: {fileID: 9195237863324244324, guid: 008a4cf9e69f29945b2f030cf953e9e6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 008a4cf9e69f29945b2f030cf953e9e6, type: 3}
@@ -1018,7 +1018,7 @@ PrefabInstance:
     - target: {fileID: 3276651092353047326, guid: 0f9c545e96969ed4aa4ed89c72c1ee94,
         type: 3}
       propertyPath: m_isKeyboardOperation
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3276651092353047326, guid: 0f9c545e96969ed4aa4ed89c72c1ee94,
         type: 3}
