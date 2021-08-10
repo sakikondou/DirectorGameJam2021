@@ -14,7 +14,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Move2",
+                    "name": "Move1",
                     "type": "Value",
                     "id": "9c2a3fc1-6866-4886-9c32-28d76f016266",
                     "expectedControlType": "Vector2",
@@ -41,6 +41,22 @@
                     "name": "RotateMuzzle",
                     "type": "Value",
                     "id": "afcedce9-ce88-4a2c-a0dd-e35662e177d9",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RotateMuzzle1",
+                    "type": "Value",
+                    "id": "7a2f08e0-954f-4688-91c0-220982533464",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RotateMuzzle2",
+                    "type": "Value",
+                    "id": "5d4b2111-5e3a-4d71-b5df-39f4a3f0b951",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
@@ -345,7 +361,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Move2",
+                    "action": "Move1",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -356,7 +372,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Move2",
+                    "action": "Move1",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -367,7 +383,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Move2",
+                    "action": "Move1",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -378,7 +394,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Move2",
+                    "action": "Move1",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -389,7 +405,73 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Move2",
+                    "action": "Move1",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "NumberPad",
+                    "id": "a911a141-e49d-4b4c-9eff-705a2dc93b44",
+                    "path": "Dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateMuzzle1",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "left",
+                    "id": "51ba5b68-bf51-494e-86ea-64bb4451c727",
+                    "path": "<Keyboard>/numpad7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "RotateMuzzle1",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "642ad335-7592-465d-ae8c-add42529b709",
+                    "path": "<Keyboard>/numpad9",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "RotateMuzzle1",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "QE",
+                    "id": "dcd2097f-3f1e-44ac-9248-89297c32b04c",
+                    "path": "Dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateMuzzle2",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "left",
+                    "id": "d2e601fe-7881-42c7-8c3e-8c4696c0e42e",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "RotateMuzzle2",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "077f69c8-524a-40be-b465-b0c4f494eab6",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "RotateMuzzle2",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }

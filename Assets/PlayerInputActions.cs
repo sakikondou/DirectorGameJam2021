@@ -27,7 +27,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Move2"",
+                    ""name"": ""Move1"",
                     ""type"": ""Value"",
                     ""id"": ""9c2a3fc1-6866-4886-9c32-28d76f016266"",
                     ""expectedControlType"": ""Vector2"",
@@ -54,6 +54,22 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""name"": ""RotateMuzzle"",
                     ""type"": ""Value"",
                     ""id"": ""afcedce9-ce88-4a2c-a0dd-e35662e177d9"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""RotateMuzzle1"",
+                    ""type"": ""Value"",
+                    ""id"": ""7a2f08e0-954f-4688-91c0-220982533464"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""RotateMuzzle2"",
+                    ""type"": ""Value"",
+                    ""id"": ""5d4b2111-5e3a-4d71-b5df-39f4a3f0b951"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -358,7 +374,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Move2"",
+                    ""action"": ""Move1"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -369,7 +385,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move2"",
+                    ""action"": ""Move1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -380,7 +396,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move2"",
+                    ""action"": ""Move1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -391,7 +407,7 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move2"",
+                    ""action"": ""Move1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -402,7 +418,73 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Move2"",
+                    ""action"": ""Move1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""NumberPad"",
+                    ""id"": ""a911a141-e49d-4b4c-9eff-705a2dc93b44"",
+                    ""path"": ""Dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateMuzzle1"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""51ba5b68-bf51-494e-86ea-64bb4451c727"",
+                    ""path"": ""<Keyboard>/numpad7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""RotateMuzzle1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""642ad335-7592-465d-ae8c-add42529b709"",
+                    ""path"": ""<Keyboard>/numpad9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""RotateMuzzle1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""QE"",
+                    ""id"": ""dcd2097f-3f1e-44ac-9248-89297c32b04c"",
+                    ""path"": ""Dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotateMuzzle2"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""d2e601fe-7881-42c7-8c3e-8c4696c0e42e"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""RotateMuzzle2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""077f69c8-524a-40be-b465-b0c4f494eab6"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""RotateMuzzle2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -981,10 +1063,12 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
-        m_Player_Move2 = m_Player.FindAction("Move2", throwIfNotFound: true);
+        m_Player_Move1 = m_Player.FindAction("Move1", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
         m_Player_RotateMuzzle = m_Player.FindAction("RotateMuzzle", throwIfNotFound: true);
+        m_Player_RotateMuzzle1 = m_Player.FindAction("RotateMuzzle1", throwIfNotFound: true);
+        m_Player_RotateMuzzle2 = m_Player.FindAction("RotateMuzzle2", throwIfNotFound: true);
         m_Player_Start = m_Player.FindAction("Start", throwIfNotFound: true);
         m_Player_ReStart = m_Player.FindAction("ReStart", throwIfNotFound: true);
         // UI
@@ -1049,10 +1133,12 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Player;
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Move;
-    private readonly InputAction m_Player_Move2;
+    private readonly InputAction m_Player_Move1;
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Fire;
     private readonly InputAction m_Player_RotateMuzzle;
+    private readonly InputAction m_Player_RotateMuzzle1;
+    private readonly InputAction m_Player_RotateMuzzle2;
     private readonly InputAction m_Player_Start;
     private readonly InputAction m_Player_ReStart;
     public struct PlayerActions
@@ -1060,10 +1146,12 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         private @PlayerInputActions m_Wrapper;
         public PlayerActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
-        public InputAction @Move2 => m_Wrapper.m_Player_Move2;
+        public InputAction @Move1 => m_Wrapper.m_Player_Move1;
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
         public InputAction @RotateMuzzle => m_Wrapper.m_Player_RotateMuzzle;
+        public InputAction @RotateMuzzle1 => m_Wrapper.m_Player_RotateMuzzle1;
+        public InputAction @RotateMuzzle2 => m_Wrapper.m_Player_RotateMuzzle2;
         public InputAction @Start => m_Wrapper.m_Player_Start;
         public InputAction @ReStart => m_Wrapper.m_Player_ReStart;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
@@ -1078,9 +1166,9 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @Move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                @Move2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove2;
-                @Move2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove2;
-                @Move2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove2;
+                @Move1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove1;
+                @Move1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove1;
+                @Move1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove1;
                 @Look.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                 @Look.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                 @Look.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
@@ -1090,6 +1178,12 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @RotateMuzzle.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateMuzzle;
                 @RotateMuzzle.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateMuzzle;
                 @RotateMuzzle.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateMuzzle;
+                @RotateMuzzle1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateMuzzle1;
+                @RotateMuzzle1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateMuzzle1;
+                @RotateMuzzle1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateMuzzle1;
+                @RotateMuzzle2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateMuzzle2;
+                @RotateMuzzle2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateMuzzle2;
+                @RotateMuzzle2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateMuzzle2;
                 @Start.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStart;
                 @Start.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStart;
                 @Start.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStart;
@@ -1103,9 +1197,9 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
-                @Move2.started += instance.OnMove2;
-                @Move2.performed += instance.OnMove2;
-                @Move2.canceled += instance.OnMove2;
+                @Move1.started += instance.OnMove1;
+                @Move1.performed += instance.OnMove1;
+                @Move1.canceled += instance.OnMove1;
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
@@ -1115,6 +1209,12 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @RotateMuzzle.started += instance.OnRotateMuzzle;
                 @RotateMuzzle.performed += instance.OnRotateMuzzle;
                 @RotateMuzzle.canceled += instance.OnRotateMuzzle;
+                @RotateMuzzle1.started += instance.OnRotateMuzzle1;
+                @RotateMuzzle1.performed += instance.OnRotateMuzzle1;
+                @RotateMuzzle1.canceled += instance.OnRotateMuzzle1;
+                @RotateMuzzle2.started += instance.OnRotateMuzzle2;
+                @RotateMuzzle2.performed += instance.OnRotateMuzzle2;
+                @RotateMuzzle2.canceled += instance.OnRotateMuzzle2;
                 @Start.started += instance.OnStart;
                 @Start.performed += instance.OnStart;
                 @Start.canceled += instance.OnStart;
@@ -1278,10 +1378,12 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
     public interface IPlayerActions
     {
         void OnMove(InputAction.CallbackContext context);
-        void OnMove2(InputAction.CallbackContext context);
+        void OnMove1(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
         void OnRotateMuzzle(InputAction.CallbackContext context);
+        void OnRotateMuzzle1(InputAction.CallbackContext context);
+        void OnRotateMuzzle2(InputAction.CallbackContext context);
         void OnStart(InputAction.CallbackContext context);
         void OnReStart(InputAction.CallbackContext context);
     }

@@ -249,7 +249,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1341122331646619014}
-        m_MethodName: PlayerRotate
+        m_MethodName: PlayerRotate1
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -357,6 +357,36 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 9c2a3fc1-6866-4886-9c32-28d76f016266
     m_ActionName: Player/Move2[/Keyboard/numpad8,/Keyboard/numpad5,/Keyboard/numpad4,/Keyboard/numpad6]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1341122331646619014}
+        m_MethodName: PlayerRotate1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7a2f08e0-954f-4688-91c0-220982533464
+    m_ActionName: Player/RotateMuzzle1[/Keyboard/q,/Keyboard/numpad7,/Keyboard/e,/Keyboard/numpad9]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1341122331646619014}
+        m_MethodName: PlayerRotate2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5d4b2111-5e3a-4d71-b5df-39f4a3f0b951
+    m_ActionName: Player/RotateMuzzle2[/Keyboard/q,/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
