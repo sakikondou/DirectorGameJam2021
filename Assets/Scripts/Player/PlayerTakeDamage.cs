@@ -5,7 +5,7 @@ public class PlayerTakeDamage : MonoBehaviour
     /// <summary>
     /// 最大HP
     /// </summary>
-    float m_maxHp = 10;
+    [SerializeField] float m_maxHp = 10;
     /// <summary>
     /// 最大HP
     /// </summary>
