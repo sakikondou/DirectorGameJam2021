@@ -51,6 +51,22 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
+                    ""name"": ""Fire1"",
+                    ""type"": ""Button"",
+                    ""id"": ""4873f421-1fcb-459f-b473-4a6e069bf502"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Fire2"",
+                    ""type"": ""Button"",
+                    ""id"": ""9fe2baaa-99b5-4022-8118-9dba3a12020b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
                     ""name"": ""RotateMuzzle"",
                     ""type"": ""Value"",
                     ""id"": ""afcedce9-ce88-4a2c-a0dd-e35662e177d9"",
@@ -487,6 +503,50 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""action"": ""RotateMuzzle2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ee79eeda-c9dd-44c5-8720-a1fe80266c69"",
+                    ""path"": ""<Keyboard>/numpadEnter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Fire1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f6133e08-3841-4f38-ada1-0f96dd3affbf"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Fire1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a371d12e-759a-4b5e-b07d-dd3dd6ad9a99"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Fire2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c4de3d7a-8c47-4f55-b195-584b4c938379"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Fire2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -1066,6 +1126,8 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         m_Player_Move1 = m_Player.FindAction("Move1", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
+        m_Player_Fire1 = m_Player.FindAction("Fire1", throwIfNotFound: true);
+        m_Player_Fire2 = m_Player.FindAction("Fire2", throwIfNotFound: true);
         m_Player_RotateMuzzle = m_Player.FindAction("RotateMuzzle", throwIfNotFound: true);
         m_Player_RotateMuzzle1 = m_Player.FindAction("RotateMuzzle1", throwIfNotFound: true);
         m_Player_RotateMuzzle2 = m_Player.FindAction("RotateMuzzle2", throwIfNotFound: true);
@@ -1136,6 +1198,8 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Move1;
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Fire;
+    private readonly InputAction m_Player_Fire1;
+    private readonly InputAction m_Player_Fire2;
     private readonly InputAction m_Player_RotateMuzzle;
     private readonly InputAction m_Player_RotateMuzzle1;
     private readonly InputAction m_Player_RotateMuzzle2;
@@ -1149,6 +1213,8 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         public InputAction @Move1 => m_Wrapper.m_Player_Move1;
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
+        public InputAction @Fire1 => m_Wrapper.m_Player_Fire1;
+        public InputAction @Fire2 => m_Wrapper.m_Player_Fire2;
         public InputAction @RotateMuzzle => m_Wrapper.m_Player_RotateMuzzle;
         public InputAction @RotateMuzzle1 => m_Wrapper.m_Player_RotateMuzzle1;
         public InputAction @RotateMuzzle2 => m_Wrapper.m_Player_RotateMuzzle2;
@@ -1175,6 +1241,12 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
                 @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
+                @Fire1.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire1;
+                @Fire1.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire1;
+                @Fire1.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire1;
+                @Fire2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire2;
+                @Fire2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire2;
+                @Fire2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire2;
                 @RotateMuzzle.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateMuzzle;
                 @RotateMuzzle.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateMuzzle;
                 @RotateMuzzle.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateMuzzle;
@@ -1206,6 +1278,12 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
+                @Fire1.started += instance.OnFire1;
+                @Fire1.performed += instance.OnFire1;
+                @Fire1.canceled += instance.OnFire1;
+                @Fire2.started += instance.OnFire2;
+                @Fire2.performed += instance.OnFire2;
+                @Fire2.canceled += instance.OnFire2;
                 @RotateMuzzle.started += instance.OnRotateMuzzle;
                 @RotateMuzzle.performed += instance.OnRotateMuzzle;
                 @RotateMuzzle.canceled += instance.OnRotateMuzzle;
@@ -1381,6 +1459,8 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         void OnMove1(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnFire(InputAction.CallbackContext context);
+        void OnFire1(InputAction.CallbackContext context);
+        void OnFire2(InputAction.CallbackContext context);
         void OnRotateMuzzle(InputAction.CallbackContext context);
         void OnRotateMuzzle1(InputAction.CallbackContext context);
         void OnRotateMuzzle2(InputAction.CallbackContext context);

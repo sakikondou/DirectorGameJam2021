@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMove : Player
+public class PlayerMove : MonoBehaviour
 {
     /// <summary>
     /// デフォルトのスピード
@@ -21,6 +21,7 @@ public class PlayerMove : Player
     /// 入力されたプレイヤーの向き
     /// </summary>
     Vector2 m_inputForwardAxis = Vector2.zero;
+    Player m_player = null;
 
     Rigidbody2D m_rb = null;
 
@@ -28,6 +29,7 @@ public class PlayerMove : Player
     {
         m_rb = GetComponent<Rigidbody2D>();
         m_speed = m_defaultSpeed;
+        m_player = GetComponent<Player>();
     }
 
     public void PlayerRotate(InputAction.CallbackContext context)
@@ -73,7 +75,7 @@ public class PlayerMove : Player
 
     public void Move1(InputAction.CallbackContext context)
     {
-        if (GameManager.Instance.IsKeyboardOperation && PlayerID == 0)
+        if (GameManager.Instance.IsKeyboardOperation && m_player.PlayerID == 0)
         {
             m_inputMoveAxis = context.ReadValue<Vector2>();
             m_rb.velocity = m_inputMoveAxis * m_speed;
@@ -82,7 +84,7 @@ public class PlayerMove : Player
 
     public void Move2(InputAction.CallbackContext context)
     {
-        if (GameManager.Instance.IsKeyboardOperation && PlayerID == 1)
+        if (GameManager.Instance.IsKeyboardOperation && m_player.PlayerID == 1)
         {
             m_inputMoveAxis = context.ReadValue<Vector2>();
             m_rb.velocity = m_inputMoveAxis * m_speed;
@@ -92,12 +94,12 @@ public class PlayerMove : Player
     private void Update()
     {
         if (GameManager.Instance.IsKeyboardOperation)
-            transform.Rotate(0, 0, m_inputForwardAxis.x);
+            transform.Rotate(0, 0, -m_inputForwardAxis.x);
     }
 
     public void PlayerRotate1(InputAction.CallbackContext context)
     {
-        if (GameManager.Instance.IsKeyboardOperation && PlayerID == 0)
+        if (GameManager.Instance.IsKeyboardOperation && m_player.PlayerID == 0)
         {
             m_inputForwardAxis = context.ReadValue<Vector2>();
         }
@@ -105,7 +107,7 @@ public class PlayerMove : Player
 
     public void PlayerRotate2(InputAction.CallbackContext context)
     {
-        if (GameManager.Instance.IsKeyboardOperation && PlayerID == 1)
+        if (GameManager.Instance.IsKeyboardOperation && m_player.PlayerID == 1)
         {
             m_inputForwardAxis = context.ReadValue<Vector2>();
         }

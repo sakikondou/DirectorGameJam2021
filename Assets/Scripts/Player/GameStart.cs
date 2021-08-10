@@ -57,7 +57,6 @@ public class GameStart : MonoBehaviour
             }
         }
 
-
         for (int i = 0; i < playerObjs.Length; i++)
         {
             playerObjs[i].name = playerObjs[i].name + players[i].PlayerID;

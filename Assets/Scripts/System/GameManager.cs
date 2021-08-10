@@ -36,6 +36,10 @@ public class GameManager : MonoBehaviour
 
     public void OnClickPlayer()
     {
-        Instantiate(m_playerPrefab);
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        if (players.Length < 2)
+        {
+            Instantiate(m_playerPrefab);
+        }
     }
 }

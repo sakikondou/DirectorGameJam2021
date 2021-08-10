@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4920067346941400647}
   - component: {fileID: 4920067346941400644}
+  - component: {fileID: 5969197934049167438}
   - component: {fileID: 1341122331646619014}
   - component: {fileID: 4528042845236228955}
   - component: {fileID: 1463374547776462236}
   - component: {fileID: 5842846004746272383}
   - component: {fileID: 4848857576685427837}
-  - component: {fileID: 5969197934049167438}
   - component: {fileID: 8347284004846143261}
   - component: {fileID: -8489652760350442537}
   - component: {fileID: 6988796367299219644}
@@ -96,6 +96,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5969197934049167438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4920067346941400645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ab3f6c069a5d4847a1695d7d94f62a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1341122331646619014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,18 +175,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_losingEffect: {fileID: 309408171025957851, guid: 1d3fd7e1e63daf440a73c0a71c2dcee4,
     type: 3}
---- !u!114 &5969197934049167438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4920067346941400645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ab3f6c069a5d4847a1695d7d94f62a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8347284004846143261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,6 +387,36 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 5d4b2111-5e3a-4d71-b5df-39f4a3f0b951
     m_ActionName: Player/RotateMuzzle2[/Keyboard/q,/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4528042845236228955}
+        m_MethodName: OnFire1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4873f421-1fcb-459f-b473-4a6e069bf502
+    m_ActionName: Player/Fire1[/Keyboard/numpadEnter,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4528042845236228955}
+        m_MethodName: OnFire2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9fe2baaa-99b5-4022-8118-9dba3a12020b
+    m_ActionName: Player/Fire2[/Keyboard/shift,/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
