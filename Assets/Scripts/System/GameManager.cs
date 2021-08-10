@@ -13,9 +13,13 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Instance = this;
-        GetComponent<PlayerInputManager>().enabled = false;
+        
         if (m_isKeyboardOperation)
+        {
+            GetComponent<PlayerInputManager>().enabled = false;
             m_playerGeneratorButton.SetActive(true);
+        }
+            
     }
 
     public void OnClickPlayer()
