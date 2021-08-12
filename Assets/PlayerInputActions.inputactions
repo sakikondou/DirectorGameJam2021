@@ -76,22 +76,6 @@
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
-                },
-                {
-                    "name": "Start",
-                    "type": "Button",
-                    "id": "cf643a26-409c-49c2-8f5c-536095e8fc80",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "ReStart",
-                    "type": "Button",
-                    "id": "ae4c2b9d-a356-45e5-8b2b-c0d68f840700",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -279,50 +263,6 @@
                     "processors": "",
                     "groups": "Joystick;Gamepad",
                     "action": "RotateMuzzle",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8198f2e9-ed08-47b3-bfab-35e566833492",
-                    "path": "<Gamepad>/start",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Start",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "f17e9307-f773-4519-b638-9d4dd2104ed2",
-                    "path": "<Keyboard>/enter",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Start",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b9547a31-9f70-4373-abe5-dd17fadbd1c6",
-                    "path": "<HID::SZ-MYPOWER PC Gamepad>/button10",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Start",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "94b9d06b-f735-496d-b118-3ea6b112c27d",
-                    "path": "<Gamepad>/start",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ReStart",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -1104,6 +1044,85 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Game",
+            "id": "553b44fa-1e34-48ea-bba2-7671614441af",
+            "actions": [
+                {
+                    "name": "Start",
+                    "type": "Button",
+                    "id": "897933f4-01d4-4a87-a70e-07d2270dbabe",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Restart",
+                    "type": "Button",
+                    "id": "6af7f4cb-a54d-4a18-820f-7d4b50c048fa",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ff57b6c2-806d-4542-b93a-8d6e29205449",
+                    "path": "<HID::SZ-MYPOWER PC Gamepad>/button10",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e5dbd6cd-ed03-4771-82be-704c4911c7de",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2ce7e222-0a9e-4c1e-8a1d-c57921ed6869",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Start",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c38d2678-959c-4509-9f4b-991927d5e25f",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "59b7728f-836b-4dee-8808-e2dedbca7af3",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ReStart",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

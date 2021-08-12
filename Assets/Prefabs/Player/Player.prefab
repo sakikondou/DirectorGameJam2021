@@ -273,21 +273,6 @@ MonoBehaviour:
     m_ActionId: afcedce9-ce88-4a2c-a0dd-e35662e177d9
     m_ActionName: Player/RotateMuzzle[/XInputControllerWindows/rightStick,/XInputControllerWindows/rightStick]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5842846004746272383}
-        m_MethodName: OnStart
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: cf643a26-409c-49c2-8f5c-536095e8fc80
-    m_ActionName: Player/Start[/XInputControllerWindows/start,/XInputControllerWindows/start]
-  - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 03929092-328f-4783-a19b-b205115037a7
     m_ActionName: UI/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/leftStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/dpad,/XInputControllerWindows/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
@@ -327,21 +312,6 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: b88c36a8-1c9a-406a-9d85-ca60ac481ab4
     m_ActionName: UI/TrackedDeviceOrientation
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ReStart
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: ae4c2b9d-a356-45e5-8b2b-c0d68f840700
-    m_ActionName: Player/ReStart[/XInputControllerWindows/start,/XInputControllerWindows/start]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1341122331646619014}
@@ -417,9 +387,39 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 9fe2baaa-99b5-4022-8118-9dba3a12020b
     m_ActionName: Player/Fire2[/Keyboard/shift,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5842846004746272383}
+        m_MethodName: OnStart
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 897933f4-01d4-4a87-a70e-07d2270dbabe
+    m_ActionName: Game/Start[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5842846004746272383}
+        m_MethodName: OnStart
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 6af7f4cb-a54d-4a18-820f-7d4b50c048fa
+    m_ActionName: Game/Restart[/Keyboard/enter]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: 553b44fa-1e34-48ea-bba2-7671614441af
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!50 &-8489652760350442537

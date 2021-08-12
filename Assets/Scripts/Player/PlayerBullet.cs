@@ -20,7 +20,7 @@ public class PlayerBullet : Bullet
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Wall"))  // 衝突相手が 弾 だったら
+        if (collision.gameObject.CompareTag("Wall"))  // 衝突相手が 壁 だったら
         {
             Destroy(gameObject);  // 弾のオブジェクトを破棄する
         }

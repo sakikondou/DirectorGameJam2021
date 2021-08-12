@@ -42,7 +42,7 @@ public class InputController : MonoBehaviour
         m_playerInputControllers = FindObjectsOfType<PlayerInputController>();
         for (int i = 0; i < m_playerInputControllers.Length; i++)
         {
-            m_playerInputControllers[i].ChengePlayerInput();
+            m_playerInputControllers[i].ChangePlayerInput();
         }
     }
 
@@ -54,7 +54,18 @@ public class InputController : MonoBehaviour
         m_playerInputControllers = FindObjectsOfType<PlayerInputController>();
         for (int i = 0; i < m_playerInputControllers.Length; i++)
         {
-            m_playerInputControllers[i].ChengeUIInput();
+            m_playerInputControllers[i].ChangeUIInput();
+        }
+    }
+    /// <summary>
+    /// 全てのプレイヤーの入力をプレイヤー操作に切り換える
+    /// </summary>
+    public void AllPlayerInputGameChange()
+    {
+        m_playerInputControllers = FindObjectsOfType<PlayerInputController>();
+        for (int i = 0; i < m_playerInputControllers.Length; i++)
+        {
+            m_playerInputControllers[i].ChangeGameInput();
         }
     }
 

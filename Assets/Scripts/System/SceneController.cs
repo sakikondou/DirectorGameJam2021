@@ -5,18 +5,19 @@ public class SceneController : MonoBehaviour
 {
     public static SceneController Instance;
 
-    [SerializeField] GameObject ResultUI;
+    [SerializeField] GameObject[] ResultUI;
+
+    InputController m_inputController;
 
     string loadSceneName;
     bool IsLoaded = false;
 
-    GameObject[] m_playerObjs;
-    [SerializeField] Color m_color;
 
 
     private void Start()
     {
         Instance = this;
+        m_inputController = FindObjectOfType<InputController>();
     }
 
     //シーン遷移
@@ -39,8 +40,17 @@ public class SceneController : MonoBehaviour
     }
 
     //リザルト表示(仮)
-    public void Result()
+    public void Result(int playerId)
     {
-        ResultUI.SetActive(true);
+        if (playerId == 0)
+        {
+            ResultUI[0].SetActive(true);
+        }
+        else if (playerId == 1)
+        {
+            ResultUI[1].SetActive(true);
+        }
+        FindObjectOfType<BomGenerator>().enabled = false;
+        m_inputController.AllPlayerInputGameChange();
     }
 }
