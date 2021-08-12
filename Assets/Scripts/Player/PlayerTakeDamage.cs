@@ -54,7 +54,7 @@ public class PlayerTakeDamage : MonoBehaviour
                 {
                     Instantiate(m_losingEffect, transform.position, Quaternion.identity);
                 }
-
+                SceneController.Instance.Result(player.PlayerID);
                 // 自分を破棄する
                 Destroy(this.gameObject);
             }

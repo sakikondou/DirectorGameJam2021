@@ -34,7 +34,7 @@ public class PlayerInputController : MonoBehaviour
     /// <summary>
     /// プレイヤー操作の入力に切り換える
     /// </summary>
-    public void ChengePlayerInput()
+    public void ChangePlayerInput()
     {
         m_playerInput.SwitchCurrentActionMap("Player");
     }
@@ -42,9 +42,16 @@ public class PlayerInputController : MonoBehaviour
     /// <summary>
     /// UI操作の入力に切り換える
     /// </summary>
-    public void ChengeUIInput()
+    public void ChangeUIInput()
     {
         m_playerInput.SwitchCurrentActionMap("UI");
+    }
+    /// <summary>
+    /// Gameの状態を切り替える入力
+    /// </summary>
+    public void ChangeGameInput()
+    {
+        m_playerInput.SwitchCurrentActionMap("Game");
     }
 
     /// <summary>

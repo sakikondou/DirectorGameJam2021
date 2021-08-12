@@ -20,6 +20,7 @@ public class CountDown : MonoBehaviour
     void PlayStart()
     {
         m_input.AllStartInput();
+        m_input.AllPlayerInputPlayerChange();
         m_generator.enabled = true;
     }
 }

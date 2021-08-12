@@ -89,22 +89,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
-                },
-                {
-                    ""name"": ""Start"",
-                    ""type"": ""Button"",
-                    ""id"": ""cf643a26-409c-49c2-8f5c-536095e8fc80"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""ReStart"",
-                    ""type"": ""Button"",
-                    ""id"": ""ae4c2b9d-a356-45e5-8b2b-c0d68f840700"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -292,50 +276,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Joystick;Gamepad"",
                     ""action"": ""RotateMuzzle"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8198f2e9-ed08-47b3-bfab-35e566833492"",
-                    ""path"": ""<Gamepad>/start"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Start"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""f17e9307-f773-4519-b638-9d4dd2104ed2"",
-                    ""path"": ""<Keyboard>/enter"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Start"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b9547a31-9f70-4373-abe5-dd17fadbd1c6"",
-                    ""path"": ""<HID::SZ-MYPOWER PC Gamepad>/button10"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Start"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""94b9d06b-f735-496d-b118-3ea6b112c27d"",
-                    ""path"": ""<Gamepad>/start"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ReStart"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -1121,6 +1061,85 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Game"",
+            ""id"": ""553b44fa-1e34-48ea-bba2-7671614441af"",
+            ""actions"": [
+                {
+                    ""name"": ""Start"",
+                    ""type"": ""Button"",
+                    ""id"": ""897933f4-01d4-4a87-a70e-07d2270dbabe"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Restart"",
+                    ""type"": ""Button"",
+                    ""id"": ""6af7f4cb-a54d-4a18-820f-7d4b50c048fa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""ff57b6c2-806d-4542-b93a-8d6e29205449"",
+                    ""path"": ""<HID::SZ-MYPOWER PC Gamepad>/button10"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e5dbd6cd-ed03-4771-82be-704c4911c7de"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2ce7e222-0a9e-4c1e-8a1d-c57921ed6869"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c38d2678-959c-4509-9f4b-991927d5e25f"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""59b7728f-836b-4dee-8808-e2dedbca7af3"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ReStart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -1197,8 +1216,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         m_Player_RotateMuzzle = m_Player.FindAction("RotateMuzzle", throwIfNotFound: true);
         m_Player_RotateMuzzle1 = m_Player.FindAction("RotateMuzzle1", throwIfNotFound: true);
         m_Player_RotateMuzzle2 = m_Player.FindAction("RotateMuzzle2", throwIfNotFound: true);
-        m_Player_Start = m_Player.FindAction("Start", throwIfNotFound: true);
-        m_Player_ReStart = m_Player.FindAction("ReStart", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1211,6 +1228,10 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+        // Game
+        m_Game = asset.FindActionMap("Game", throwIfNotFound: true);
+        m_Game_Start = m_Game.FindAction("Start", throwIfNotFound: true);
+        m_Game_Restart = m_Game.FindAction("Restart", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1269,8 +1290,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_RotateMuzzle;
     private readonly InputAction m_Player_RotateMuzzle1;
     private readonly InputAction m_Player_RotateMuzzle2;
-    private readonly InputAction m_Player_Start;
-    private readonly InputAction m_Player_ReStart;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -1284,8 +1303,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         public InputAction @RotateMuzzle => m_Wrapper.m_Player_RotateMuzzle;
         public InputAction @RotateMuzzle1 => m_Wrapper.m_Player_RotateMuzzle1;
         public InputAction @RotateMuzzle2 => m_Wrapper.m_Player_RotateMuzzle2;
-        public InputAction @Start => m_Wrapper.m_Player_Start;
-        public InputAction @ReStart => m_Wrapper.m_Player_ReStart;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1322,12 +1339,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @RotateMuzzle2.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateMuzzle2;
                 @RotateMuzzle2.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateMuzzle2;
                 @RotateMuzzle2.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRotateMuzzle2;
-                @Start.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStart;
-                @Start.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStart;
-                @Start.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnStart;
-                @ReStart.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReStart;
-                @ReStart.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReStart;
-                @ReStart.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnReStart;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1359,12 +1370,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
                 @RotateMuzzle2.started += instance.OnRotateMuzzle2;
                 @RotateMuzzle2.performed += instance.OnRotateMuzzle2;
                 @RotateMuzzle2.canceled += instance.OnRotateMuzzle2;
-                @Start.started += instance.OnStart;
-                @Start.performed += instance.OnStart;
-                @Start.canceled += instance.OnStart;
-                @ReStart.started += instance.OnReStart;
-                @ReStart.performed += instance.OnReStart;
-                @ReStart.canceled += instance.OnReStart;
             }
         }
     }
@@ -1474,6 +1479,47 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // Game
+    private readonly InputActionMap m_Game;
+    private IGameActions m_GameActionsCallbackInterface;
+    private readonly InputAction m_Game_Start;
+    private readonly InputAction m_Game_Restart;
+    public struct GameActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public GameActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Start => m_Wrapper.m_Game_Start;
+        public InputAction @Restart => m_Wrapper.m_Game_Restart;
+        public InputActionMap Get() { return m_Wrapper.m_Game; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(GameActions set) { return set.Get(); }
+        public void SetCallbacks(IGameActions instance)
+        {
+            if (m_Wrapper.m_GameActionsCallbackInterface != null)
+            {
+                @Start.started -= m_Wrapper.m_GameActionsCallbackInterface.OnStart;
+                @Start.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnStart;
+                @Start.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnStart;
+                @Restart.started -= m_Wrapper.m_GameActionsCallbackInterface.OnRestart;
+                @Restart.performed -= m_Wrapper.m_GameActionsCallbackInterface.OnRestart;
+                @Restart.canceled -= m_Wrapper.m_GameActionsCallbackInterface.OnRestart;
+            }
+            m_Wrapper.m_GameActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Start.started += instance.OnStart;
+                @Start.performed += instance.OnStart;
+                @Start.canceled += instance.OnStart;
+                @Restart.started += instance.OnRestart;
+                @Restart.performed += instance.OnRestart;
+                @Restart.canceled += instance.OnRestart;
+            }
+        }
+    }
+    public GameActions @Game => new GameActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -1530,8 +1576,6 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         void OnRotateMuzzle(InputAction.CallbackContext context);
         void OnRotateMuzzle1(InputAction.CallbackContext context);
         void OnRotateMuzzle2(InputAction.CallbackContext context);
-        void OnStart(InputAction.CallbackContext context);
-        void OnReStart(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
@@ -1545,5 +1589,10 @@ public class @PlayerInputActions : IInputActionCollection, IDisposable
         void OnRightClick(InputAction.CallbackContext context);
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+    }
+    public interface IGameActions
+    {
+        void OnStart(InputAction.CallbackContext context);
+        void OnRestart(InputAction.CallbackContext context);
     }
 }

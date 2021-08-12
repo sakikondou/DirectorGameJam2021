@@ -45,8 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c1d37332890d4347abc58f5b3ba93c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_isKeyboardOperation: 0
-  m_playerPrefab: {fileID: 0}
+  m_isKeyboardOperation: 1
+  m_playerPrefab: {fileID: 4920067346941400645, guid: 7c0d16e6d5c54414ca7955f5ca2f735e,
+    type: 3}
   m_playerGeneratorButton: {fileID: 0}
 --- !u!114 &5867180245218337136
 MonoBehaviour:
