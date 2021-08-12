@@ -13,6 +13,15 @@ public class Bom : MonoBehaviour
 
     [SerializeField] GameObject m_bomEfect = null;
 
+    BomGenerator m_bomGenerator = default;
+
+    [SerializeField] int m_id = -1;
+    public void Init(BomGenerator bomGenerator, int id)
+    {
+        m_bomGenerator = bomGenerator;
+        m_id = id;
+    }
+
     /// <summary>
     /// プレイヤーの弾に当たったら自身から弾を発射して自身は消える
     /// </summary>
@@ -36,7 +45,7 @@ public class Bom : MonoBehaviour
 
         if (m_bomEfect)
             Instantiate(m_bomEfect, this.transform.position, m_bomEfect.transform.rotation);
-
+        m_bomGenerator.RemoveSpawnPoints(m_id);
         Destroy(this.gameObject);
     }
 

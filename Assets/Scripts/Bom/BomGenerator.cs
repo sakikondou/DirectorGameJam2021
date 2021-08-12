@@ -29,33 +29,42 @@ public class BomGenerator : MonoBehaviour
     /// 生成する間隔を狭める値
     /// </summary>
     [SerializeField] float m_decreaseIntervalValue = 0.2f;
+    /// <summary>
+    /// bombの最大数
+    /// </summary>
+    [SerializeField] int m_count = 100;
+
+    List<int> spawnedIndexs = new List<int>();
+
+    List<GameObject> bombObjs = new List<GameObject>();
+
+
 
     void Start()
     {
-        for (int x = 0; x < m_indexNumX; x++)
+        for (int y = 0; y < m_indexNumX; y++)
         {
-            for (int y = 0; y < m_indexNumY; y++)
+            for (int x = 0; x < m_indexNumY; x++)
             {
                 GameObject spawnPoint = Instantiate(m_spawn, transform);
-
-                spawnPoint.transform.position = new Vector2(transform.position.x + x, transform.position.y + y);
+                spawnPoint.transform.position = new Vector2(transform.position.x + y, transform.position.y + x);
 
                 m_spawnPoints.Add(spawnPoint.transform);
-                if (x == 0 && y == 0)
+                if (y == 0 && x == 0)//左下
                 {
-                    Instantiate(m_bom, spawnPoint.transform);
+                    Spawn(0);
                 }
-                if (x == m_indexNumX - 1 && y == 0)
+                if (y == m_indexNumX - 1 && x == 0)//右下
                 {
-                    Instantiate(m_bom, spawnPoint.transform);
+                    Spawn((m_indexNumX - 1) * m_indexNumY);
                 }
-                if (x == 0 && y == m_indexNumY - 1)
+                if (y == 0 && x == m_indexNumY - 1)//左上
                 {
-                    Instantiate(m_bom, spawnPoint.transform);
+                    Spawn(m_indexNumY - 1);
                 }
-                if (x == m_indexNumX - 1 && y == m_indexNumY - 1)
+                if (y == m_indexNumX - 1 && x == m_indexNumY - 1)//右上
                 {
-                    Instantiate(m_bom, spawnPoint.transform);
+                    Spawn(m_indexNumY * m_indexNumX - 1);
                 }
             }
         }
@@ -66,45 +75,36 @@ public class BomGenerator : MonoBehaviour
         m_timer += Time.deltaTime;
         if (m_timer >= m_interval)
         {
-            Spawn();
+            SetBomb();
             m_timer = 0;
             m_interval -= m_decreaseIntervalValue;
-            if (m_interval < 1)
-            {
-                m_minSpawnCount = 20;
-                m_maxSpawnCount = 40;
-            }
-            if (m_interval < 2)
-            {
-                m_minSpawnCount = 15;
-                m_maxSpawnCount = 30;
-            }
-            if (m_interval < 3)
-            {
-                m_minSpawnCount = 10;
-                m_maxSpawnCount = 20;
-            }
         }
     }
     /// <summary>
-    /// 爆弾のランダム配置
+    /// 爆弾の配置
     /// </summary>
-    void Spawn()
+    void SetBomb()
     {
-        List<int> spawnedIndexs = new List<int>();
-        int spawnCount = Random.Range(m_minSpawnCount, m_maxSpawnCount);
-        for (int count = 0; count < spawnCount; count++)
+        int spawnIndex = Random.Range(0, m_spawnPoints.Count + 1);
+
+        if (!spawnedIndexs.Contains(spawnIndex))
         {
-            int spawnIndex = Random.Range(0, m_spawnPoints.Count);
-            if (!spawnedIndexs.Contains(spawnIndex))
-            {
-                Instantiate(m_bom, m_spawnPoints[spawnIndex]);
-                spawnedIndexs.Add(spawnIndex);
-            }
-            else
-            {
-                count--;
-            }
+            Spawn(spawnIndex);
         }
+    }
+    void Spawn(int index)
+    {
+        if (spawnedIndexs.Count < m_count)
+        {
+            spawnedIndexs.Add(index);
+            GameObject bombObj = Instantiate(m_bom, m_spawnPoints[index]);
+            bombObj.GetComponent<Bom>().Init(this, index);
+        }
+
+    }
+    public void RemoveSpawnPoints(int bombId)
+    {
+        spawnedIndexs.Remove(bombId);
+        Debug.Log(bombObjs.Count);
     }
 }
